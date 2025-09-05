@@ -100,8 +100,8 @@ def draw_chart(hashmode, devices, showimage=False):
     
     # add value
     plt.yticks(y_pos, sorted_device_names)
-    plt.xlabel(f'{hashmode} Speed (H/s)')
-    plt.title(f'Device for {hashmode} Speed', fontsize=14, fontweight='bold')
+    plt.xlabel(f'{hashmode} ({hashmode_data[hashmode]["hashmode_name"]}) Speed (H/s)')
+    plt.title(f'Device for {hashmode} ({hashmode_data[hashmode]["hashmode_name"]}) Speed', fontsize=14, fontweight='bold')
     
     # add grid net
     plt.grid(True, axis='x', alpha=0.3)
