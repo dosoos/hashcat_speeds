@@ -8,6 +8,12 @@ You can use the scripts in this project to visualize the benchmark results. Exam
 
 ![Benchmark Visualization Example](images/Hash_Mode_0.png)
 
+## Custom Visualization
+
+You can visit the [online visualization page](https://dosoos.github.io/hashcat_speeds/pages/index.html) to customize the hash type and view speed rankings and comparison charts.
+
+This page supports filtering and sorting by various Hash-Modes, making it easy to compare the performance of different GPUs on different algorithms.
+
 ## How to Add Your Benchmark Text
 
 1. **Prepare Your Benchmark Results**  
