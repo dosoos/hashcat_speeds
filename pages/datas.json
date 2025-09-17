@@ -1,4 +1,2351 @@
 {
+  "RTX6000Ada": {
+    "Hash-Mode 0": {
+      "hashmode_id": "0",
+      "hashmode_name": "MD5",
+      "speed": 131900000000.0
+    },
+    "Hash-Mode 10": {
+      "hashmode_id": "10",
+      "hashmode_name": "md5($pass.$salt",
+      "speed": 129699999999.99998
+    },
+    "Hash-Mode 11": {
+      "hashmode_id": "11",
+      "hashmode_name": "Joomla < 2.5.18",
+      "speed": 117000000000.0
+    },
+    "Hash-Mode 12": {
+      "hashmode_id": "12",
+      "hashmode_name": "PostgreSQL",
+      "speed": 114800000000.0
+    },
+    "Hash-Mode 20": {
+      "hashmode_id": "20",
+      "hashmode_name": "md5($salt.$pass",
+      "speed": 75473600000.0
+    },
+    "Hash-Mode 21": {
+      "hashmode_id": "21",
+      "hashmode_name": "osCommerce, xt:Commerce",
+      "speed": 75896200000.0
+    },
+    "Hash-Mode 22": {
+      "hashmode_id": "22",
+      "hashmode_name": "Juniper NetScreen/SSG (ScreenOS",
+      "speed": 76150400000.0
+    },
+    "Hash-Mode 23": {
+      "hashmode_id": "23",
+      "hashmode_name": "Skype",
+      "speed": 75036000000.0
+    },
+    "Hash-Mode 24": {
+      "hashmode_id": "24",
+      "hashmode_name": "SolarWinds Serv-U",
+      "speed": 75200300000.0
+    },
+    "Hash-Mode 30": {
+      "hashmode_id": "30",
+      "hashmode_name": "md5(utf16le($pass",
+      "speed": 120500000000.0
+    },
+    "Hash-Mode 40": {
+      "hashmode_id": "40",
+      "hashmode_name": "md5($salt.utf16le($pass",
+      "speed": 76068100000.0
+    },
+    "Hash-Mode 50": {
+      "hashmode_id": "50",
+      "hashmode_name": "HMAC-MD5 (key = $pass",
+      "speed": 20889800000.0
+    },
+    "Hash-Mode 60": {
+      "hashmode_id": "60",
+      "hashmode_name": "HMAC-MD5 (key = $salt",
+      "speed": 43567700000.0
+    },
+    "Hash-Mode 70": {
+      "hashmode_id": "70",
+      "hashmode_name": "md5(utf16le($pass",
+      "speed": 125700000000.0
+    },
+    "Hash-Mode 100": {
+      "hashmode_id": "100",
+      "hashmode_name": "SHA1",
+      "speed": 44998100000.0
+    },
+    "Hash-Mode 101": {
+      "hashmode_id": "101",
+      "hashmode_name": "nsldap, SHA-1(Base64",
+      "speed": 44761900000.0
+    },
+    "Hash-Mode 110": {
+      "hashmode_id": "110",
+      "hashmode_name": "sha1($pass.$salt",
+      "speed": 45577700000.0
+    },
+    "Hash-Mode 111": {
+      "hashmode_id": "111",
+      "hashmode_name": "nsldaps, SSHA-1(Base64",
+      "speed": 44777800000.0
+    },
+    "Hash-Mode 112": {
+      "hashmode_id": "112",
+      "hashmode_name": "Oracle S: Type (Oracle 11+",
+      "speed": 45434500000.0
+    },
+    "Hash-Mode 120": {
+      "hashmode_id": "120",
+      "hashmode_name": "sha1($salt.$pass",
+      "speed": 34428000000.0
+    },
+    "Hash-Mode 121": {
+      "hashmode_id": "121",
+      "hashmode_name": "SMF (Simple Machines Forum",
+      "speed": 34292199999.999996
+    },
+    "Hash-Mode 122": {
+      "hashmode_id": "122",
+      "hashmode_name": "macOS v10.4, macOS v10.5, macOS v10.6",
+      "speed": 34421100000.0
+    },
+    "Hash-Mode 124": {
+      "hashmode_id": "124",
+      "hashmode_name": "Django (SHA-1",
+      "speed": 34149699999.999996
+    },
+    "Hash-Mode 125": {
+      "hashmode_id": "125",
+      "hashmode_name": "ArubaOS",
+      "speed": 34250500000.0
+    },
+    "Hash-Mode 130": {
+      "hashmode_id": "130",
+      "hashmode_name": "sha1(utf16le($pass",
+      "speed": 46060500000.0
+    },
+    "Hash-Mode 131": {
+      "hashmode_id": "131",
+      "hashmode_name": "MSSQL (2000",
+      "speed": 46036500000.0
+    },
+    "Hash-Mode 132": {
+      "hashmode_id": "132",
+      "hashmode_name": "MSSQL (2005",
+      "speed": 46143800000.0
+    },
+    "Hash-Mode 133": {
+      "hashmode_id": "133",
+      "hashmode_name": "PeopleSoft",
+      "speed": 45306400000.0
+    },
+    "Hash-Mode 140": {
+      "hashmode_id": "140",
+      "hashmode_name": "sha1($salt.utf16le($pass",
+      "speed": 34905200000.0
+    },
+    "Hash-Mode 141": {
+      "hashmode_id": "141",
+      "hashmode_name": "Episerver 6.x < .NET 4",
+      "speed": 34744600000.0
+    },
+    "Hash-Mode 150": {
+      "hashmode_id": "150",
+      "hashmode_name": "HMAC-SHA1 (key = $pass",
+      "speed": 10045800000.0
+    },
+    "Hash-Mode 160": {
+      "hashmode_id": "160",
+      "hashmode_name": "HMAC-SHA1 (key = $salt",
+      "speed": 18473100000.0
+    },
+    "Hash-Mode 170": {
+      "hashmode_id": "170",
+      "hashmode_name": "sha1(utf16le($pass",
+      "speed": 45542000000.0
+    },
+    "Hash-Mode 200": {
+      "hashmode_id": "200",
+      "hashmode_name": "MySQL323",
+      "speed": 342100000000.0
+    },
+    "Hash-Mode 300": {
+      "hashmode_id": "300",
+      "hashmode_name": "MySQL4.1/MySQL5",
+      "speed": 19292800000.0
+    },
+    "Hash-Mode 400": {
+      "hashmode_id": "400",
+      "hashmode_name": "phpass",
+      "speed": 39755600.0
+    },
+    "Hash-Mode 500": {
+      "hashmode_id": "500",
+      "hashmode_name": "md5crypt, MD5 (Unix",
+      "speed": 55230900.0
+    },
+    "Hash-Mode 501": {
+      "hashmode_id": "501",
+      "hashmode_name": "Juniper IVE",
+      "speed": 55225600.0
+    },
+    "Hash-Mode 600": {
+      "hashmode_id": "600",
+      "hashmode_name": "BLAKE2b-512",
+      "speed": 10346500000.0
+    },
+    "Hash-Mode 610": {
+      "hashmode_id": "610",
+      "hashmode_name": "BLAKE2b-512($pass.$salt",
+      "speed": 10329700000.0
+    },
+    "Hash-Mode 620": {
+      "hashmode_id": "620",
+      "hashmode_name": "BLAKE2b-512($salt.$pass",
+      "speed": 9862200000.0
+    },
+    "Hash-Mode 900": {
+      "hashmode_id": "900",
+      "hashmode_name": "MD4",
+      "speed": 213000000000.0
+    },
+    "Hash-Mode 1000": {
+      "hashmode_id": "1000",
+      "hashmode_name": "NTLM",
+      "speed": 215700000000.0
+    },
+    "Hash-Mode 1100": {
+      "hashmode_id": "1100",
+      "hashmode_name": "Domain Cached Credentials (DCC",
+      "speed": 68551000000.0
+    },
+    "Hash-Mode 1300": {
+      "hashmode_id": "1300",
+      "hashmode_name": "SHA2-224",
+      "speed": 18715400000.0
+    },
+    "Hash-Mode 1400": {
+      "hashmode_id": "1400",
+      "hashmode_name": "SHA2-256",
+      "speed": 19155800000.0
+    },
+    "Hash-Mode 1410": {
+      "hashmode_id": "1410",
+      "hashmode_name": "sha256($pass.$salt",
+      "speed": 19294900000.0
+    },
+    "Hash-Mode 1411": {
+      "hashmode_id": "1411",
+      "hashmode_name": "SSHA-256(Base64",
+      "speed": 19100300000.0
+    },
+    "Hash-Mode 1420": {
+      "hashmode_id": "1420",
+      "hashmode_name": "sha256($salt.$pass",
+      "speed": 17558500000.0
+    },
+    "Hash-Mode 1421": {
+      "hashmode_id": "1421",
+      "hashmode_name": "hMailServer",
+      "speed": 17381800000.0
+    },
+    "Hash-Mode 1430": {
+      "hashmode_id": "1430",
+      "hashmode_name": "sha256(utf16le($pass",
+      "speed": 19312100000.0
+    },
+    "Hash-Mode 1440": {
+      "hashmode_id": "1440",
+      "hashmode_name": "sha256($salt.utf16le($pass",
+      "speed": 17601300000.0
+    },
+    "Hash-Mode 1441": {
+      "hashmode_id": "1441",
+      "hashmode_name": "Episerver 6.x >= .NET 4",
+      "speed": 17523700000.0
+    },
+    "Hash-Mode 1450": {
+      "hashmode_id": "1450",
+      "hashmode_name": "HMAC-SHA256 (key = $pass",
+      "speed": 3813100000.0
+    },
+    "Hash-Mode 1460": {
+      "hashmode_id": "1460",
+      "hashmode_name": "HMAC-SHA256 (key = $salt",
+      "speed": 8131900000.0
+    },
+    "Hash-Mode 1470": {
+      "hashmode_id": "1470",
+      "hashmode_name": "sha256(utf16le($pass",
+      "speed": 19311300000.0
+    },
+    "Hash-Mode 1500": {
+      "hashmode_id": "1500",
+      "hashmode_name": "descrypt, DES (Unix",
+      "speed": 5520900000.0
+    },
+    "Hash-Mode 1600": {
+      "hashmode_id": "1600",
+      "hashmode_name": "Apache $apr1$ MD5, md5apr1, MD5 (APR",
+      "speed": 54763100.0
+    },
+    "Hash-Mode 1700": {
+      "hashmode_id": "1700",
+      "hashmode_name": "SHA2-512",
+      "speed": 6361400000.0
+    },
+    "Hash-Mode 1710": {
+      "hashmode_id": "1710",
+      "hashmode_name": "sha512($pass.$salt",
+      "speed": 6319800000.0
+    },
+    "Hash-Mode 1711": {
+      "hashmode_id": "1711",
+      "hashmode_name": "SSHA-512(Base64",
+      "speed": 6371300000.0
+    },
+    "Hash-Mode 1720": {
+      "hashmode_id": "1720",
+      "hashmode_name": "sha512($salt.$pass",
+      "speed": 6108500000.0
+    },
+    "Hash-Mode 1722": {
+      "hashmode_id": "1722",
+      "hashmode_name": "macOS v10.7",
+      "speed": 6127400000.0
+    },
+    "Hash-Mode 1730": {
+      "hashmode_id": "1730",
+      "hashmode_name": "sha512(utf16le($pass",
+      "speed": 6380000000.0
+    },
+    "Hash-Mode 1731": {
+      "hashmode_id": "1731",
+      "hashmode_name": "MSSQL (2012, 2014",
+      "speed": 6366000000.0
+    },
+    "Hash-Mode 1740": {
+      "hashmode_id": "1740",
+      "hashmode_name": "sha512($salt.utf16le($pass",
+      "speed": 6130300000.0
+    },
+    "Hash-Mode 1750": {
+      "hashmode_id": "1750",
+      "hashmode_name": "HMAC-SHA512 (key = $pass",
+      "speed": 1446500000.0
+    },
+    "Hash-Mode 1760": {
+      "hashmode_id": "1760",
+      "hashmode_name": "HMAC-SHA512 (key = $salt",
+      "speed": 2809800000.0
+    },
+    "Hash-Mode 1770": {
+      "hashmode_id": "1770",
+      "hashmode_name": "sha512(utf16le($pass",
+      "speed": 6392100000.0
+    },
+    "Hash-Mode 1800": {
+      "hashmode_id": "1800",
+      "hashmode_name": "sha512crypt $6$, SHA512 (Unix",
+      "speed": 850400.0
+    },
+    "Hash-Mode 2000": {
+      "hashmode_id": "2000",
+      "hashmode_name": "STDOUT",
+      "speed": 66293800000000.0
+    },
+    "Hash-Mode 2100": {
+      "hashmode_id": "2100",
+      "hashmode_name": "Domain Cached Credentials 2 (DCC2",
+      "speed": 1954000.0
+    },
+    "Hash-Mode 2400": {
+      "hashmode_id": "2400",
+      "hashmode_name": "Cisco-PIX MD5",
+      "speed": 96960300000.0
+    },
+    "Hash-Mode 2410": {
+      "hashmode_id": "2410",
+      "hashmode_name": "Cisco-ASA MD5",
+      "speed": 95381000000.0
+    },
+    "Hash-Mode 2600": {
+      "hashmode_id": "2600",
+      "hashmode_name": "md5(md5($pass",
+      "speed": 39756400000.0
+    },
+    "Hash-Mode 2611": {
+      "hashmode_id": "2611",
+      "hashmode_name": "vBulletin < v3.8.5",
+      "speed": 39240000000.0
+    },
+    "Hash-Mode 2612": {
+      "hashmode_id": "2612",
+      "hashmode_name": "PHPS",
+      "speed": 38842600000.0
+    },
+    "Hash-Mode 2711": {
+      "hashmode_id": "2711",
+      "hashmode_name": "vBulletin >= v3.8.5",
+      "speed": 27198000000.0
+    },
+    "Hash-Mode 2811": {
+      "hashmode_id": "2811",
+      "hashmode_name": "MyBB 1.2+, IPB2+ (Invision Power Board",
+      "speed": 28369800000.0
+    },
+    "Hash-Mode 3000": {
+      "hashmode_id": "3000",
+      "hashmode_name": "LM",
+      "speed": 134600000000.0
+    },
+    "Hash-Mode 3100": {
+      "hashmode_id": "3100",
+      "hashmode_name": "Oracle H: Type (Oracle 7+",
+      "speed": 3599100000.0
+    },
+    "Hash-Mode 3200": {
+      "hashmode_id": "3200",
+      "hashmode_name": "bcrypt $2*$, Blowfish (Unix",
+      "speed": 201000.0
+    },
+    "Hash-Mode 3500": {
+      "hashmode_id": "3500",
+      "hashmode_name": "md5(md5(md5($pass",
+      "speed": 24346800000.0
+    },
+    "Hash-Mode 3710": {
+      "hashmode_id": "3710",
+      "hashmode_name": "md5($salt.md5($pass",
+      "speed": 34825400000.0
+    },
+    "Hash-Mode 3711": {
+      "hashmode_id": "3711",
+      "hashmode_name": "MediaWiki B type",
+      "speed": 34764100000.0
+    },
+    "Hash-Mode 3800": {
+      "hashmode_id": "3800",
+      "hashmode_name": "md5($salt.$pass.$salt",
+      "speed": 75239400000.0
+    },
+    "Hash-Mode 3910": {
+      "hashmode_id": "3910",
+      "hashmode_name": "md5(md5($pass",
+      "speed": 27058500000.0
+    },
+    "Hash-Mode 4010": {
+      "hashmode_id": "4010",
+      "hashmode_name": "md5($salt.md5($salt.$pass",
+      "speed": 31688400000.0
+    },
+    "Hash-Mode 4110": {
+      "hashmode_id": "4110",
+      "hashmode_name": "md5($salt.md5($pass.$salt",
+      "speed": 36579000000.0
+    },
+    "Hash-Mode 4300": {
+      "hashmode_id": "4300",
+      "hashmode_name": "md5(strtoupper(md5($pass",
+      "speed": 38794800000.0
+    },
+    "Hash-Mode 4400": {
+      "hashmode_id": "4400",
+      "hashmode_name": "md5(sha1($pass",
+      "speed": 22956300000.0
+    },
+    "Hash-Mode 4410": {
+      "hashmode_id": "4410",
+      "hashmode_name": "md5(sha1($pass",
+      "speed": 17007599999.999998
+    },
+    "Hash-Mode 4500": {
+      "hashmode_id": "4500",
+      "hashmode_name": "sha1(sha1($pass",
+      "speed": 16863300000.0
+    },
+    "Hash-Mode 4510": {
+      "hashmode_id": "4510",
+      "hashmode_name": "sha1(sha1($pass",
+      "speed": 16029300000.0
+    },
+    "Hash-Mode 4520": {
+      "hashmode_id": "4520",
+      "hashmode_name": "sha1($salt.sha1($pass",
+      "speed": 10550600000.0
+    },
+    "Hash-Mode 4521": {
+      "hashmode_id": "4521",
+      "hashmode_name": "Redmine",
+      "speed": 10610800000.0
+    },
+    "Hash-Mode 4522": {
+      "hashmode_id": "4522",
+      "hashmode_name": "PunBB",
+      "speed": 15588700000.0
+    },
+    "Hash-Mode 4700": {
+      "hashmode_id": "4700",
+      "hashmode_name": "sha1(md5($pass",
+      "speed": 23510300000.0
+    },
+    "Hash-Mode 4710": {
+      "hashmode_id": "4710",
+      "hashmode_name": "sha1(md5($pass",
+      "speed": 22132500000.0
+    },
+    "Hash-Mode 4711": {
+      "hashmode_id": "4711",
+      "hashmode_name": "Huawei sha1(md5($pass",
+      "speed": 22106800000.0
+    },
+    "Hash-Mode 4800": {
+      "hashmode_id": "4800",
+      "hashmode_name": "iSCSI CHAP authentication, MD5(CHAP",
+      "speed": 93321300000.0
+    },
+    "Hash-Mode 4900": {
+      "hashmode_id": "4900",
+      "hashmode_name": "sha1($salt.$pass.$salt",
+      "speed": 34075500000.0
+    },
+    "Hash-Mode 5000": {
+      "hashmode_id": "5000",
+      "hashmode_name": "sha1(sha1($salt.$pass.$salt",
+      "speed": 15946800000.0
+    },
+    "Hash-Mode 5100": {
+      "hashmode_id": "5100",
+      "hashmode_name": "Half MD5",
+      "speed": 85143100000.0
+    },
+    "Hash-Mode 5200": {
+      "hashmode_id": "5200",
+      "hashmode_name": "Password Safe v3",
+      "speed": 7533600.0
+    },
+    "Hash-Mode 5300": {
+      "hashmode_id": "5300",
+      "hashmode_name": "IKE-PSK MD5",
+      "speed": 5109200000.0
+    },
+    "Hash-Mode 5400": {
+      "hashmode_id": "5400",
+      "hashmode_name": "IKE-PSK SHA1",
+      "speed": 2338000000.0
+    },
+    "Hash-Mode 5500": {
+      "hashmode_id": "5500",
+      "hashmode_name": "NetNTLMv1 / NetNTLMv1+ESS",
+      "speed": 136800000000.00002
+    },
+    "Hash-Mode 5600": {
+      "hashmode_id": "5600",
+      "hashmode_name": "NetNTLMv2",
+      "speed": 9522700000.0
+    },
+    "Hash-Mode 5700": {
+      "hashmode_id": "5700",
+      "hashmode_name": "Cisco-IOS type 4 (SHA256",
+      "speed": 19094400000.0
+    },
+    "Hash-Mode 5800": {
+      "hashmode_id": "5800",
+      "hashmode_name": "Samsung Android Password/PIN",
+      "speed": 29099700.0
+    },
+    "Hash-Mode 6000": {
+      "hashmode_id": "6000",
+      "hashmode_name": "RIPEMD-160",
+      "speed": 29019900000.0
+    },
+    "Hash-Mode 6100": {
+      "hashmode_id": "6100",
+      "hashmode_name": "Whirlpool",
+      "speed": 3341100000.0
+    },
+    "Hash-Mode 6211": {
+      "hashmode_id": "6211",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit (legacy",
+      "speed": 1621600.0
+    },
+    "Hash-Mode 6212": {
+      "hashmode_id": "6212",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1024 bit (legacy",
+      "speed": 893700.0
+    },
+    "Hash-Mode 6213": {
+      "hashmode_id": "6213",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1536 bit (legacy",
+      "speed": 623400.0
+    },
+    "Hash-Mode 6221": {
+      "hashmode_id": "6221",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 512 bit (legacy",
+      "speed": 2342800.0
+    },
+    "Hash-Mode 6222": {
+      "hashmode_id": "6222",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 1024 bit (legacy",
+      "speed": 1150800.0
+    },
+    "Hash-Mode 6223": {
+      "hashmode_id": "6223",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 1536 bit (legacy",
+      "speed": 792700.0
+    },
+    "Hash-Mode 6231": {
+      "hashmode_id": "6231",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 512 bit (legacy",
+      "speed": 415000.0
+    },
+    "Hash-Mode 6232": {
+      "hashmode_id": "6232",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 1024 bit (legacy",
+      "speed": 205100.0
+    },
+    "Hash-Mode 6233": {
+      "hashmode_id": "6233",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 1536 bit (legacy",
+      "speed": 136000.0
+    },
+    "Hash-Mode 6241": {
+      "hashmode_id": "6241",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit + boot-mode (legacy",
+      "speed": 3015200.0
+    },
+    "Hash-Mode 6242": {
+      "hashmode_id": "6242",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1024 bit + boot-mode (legacy",
+      "speed": 1603000.0
+    },
+    "Hash-Mode 6243": {
+      "hashmode_id": "6243",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1536 bit + boot-mode (legacy",
+      "speed": 1110400.0
+    },
+    "Hash-Mode 6300": {
+      "hashmode_id": "6300",
+      "hashmode_name": "AIX {smd5}",
+      "speed": 56651800.0
+    },
+    "Hash-Mode 6400": {
+      "hashmode_id": "6400",
+      "hashmode_name": "AIX {ssha256}",
+      "speed": 84915900.0
+    },
+    "Hash-Mode 6500": {
+      "hashmode_id": "6500",
+      "hashmode_name": "AIX {ssha512}",
+      "speed": 35904900.0
+    },
+    "Hash-Mode 6600": {
+      "hashmode_id": "6600",
+      "hashmode_name": "1Password, agilekeychain",
+      "speed": 17922300.0
+    },
+    "Hash-Mode 6700": {
+      "hashmode_id": "6700",
+      "hashmode_name": "AIX {ssha1}",
+      "speed": 145100000.0
+    },
+    "Hash-Mode 6800": {
+      "hashmode_id": "6800",
+      "hashmode_name": "LastPass + LastPass sniffed",
+      "speed": 15254700.0
+    },
+    "Hash-Mode 6900": {
+      "hashmode_id": "6900",
+      "hashmode_name": "GOST R 34.11-94",
+      "speed": 2434400000.0
+    },
+    "Hash-Mode 7000": {
+      "hashmode_id": "7000",
+      "hashmode_name": "FortiGate (FortiOS",
+      "speed": 40345500000.0
+    },
+    "Hash-Mode 7100": {
+      "hashmode_id": "7100",
+      "hashmode_name": "macOS v10.8+ (PBKDF2-SHA512",
+      "speed": 2736100.0
+    },
+    "Hash-Mode 7200": {
+      "hashmode_id": "7200",
+      "hashmode_name": "GRUB 2",
+      "speed": 2605600.0
+    },
+    "Hash-Mode 7300": {
+      "hashmode_id": "7300",
+      "hashmode_name": "IPMI2 RAKP HMAC-SHA1",
+      "speed": 6028500000.0
+    },
+    "Hash-Mode 7400": {
+      "hashmode_id": "7400",
+      "hashmode_name": "sha256crypt $5$, SHA256 (Unix",
+      "speed": 1869400.0
+    },
+    "Hash-Mode 7401": {
+      "hashmode_id": "7401",
+      "hashmode_name": "MySQL $A$ (sha256crypt",
+      "speed": 1699800.0
+    },
+    "Hash-Mode 7500": {
+      "hashmode_id": "7500",
+      "hashmode_name": "Kerberos 5, etype 23, AS-REQ Pre-Auth",
+      "speed": 3464400000.0
+    },
+    "Hash-Mode 7700": {
+      "hashmode_id": "7700",
+      "hashmode_name": "SAP CODVN B (BCODE",
+      "speed": 8680000000.0
+    },
+    "Hash-Mode 7701": {
+      "hashmode_id": "7701",
+      "hashmode_name": "SAP CODVN B (BCODE",
+      "speed": 8599400000.0
+    },
+    "Hash-Mode 7800": {
+      "hashmode_id": "7800",
+      "hashmode_name": "SAP CODVN F/G (PASSCODE",
+      "speed": 6462000000.0
+    },
+    "Hash-Mode 7801": {
+      "hashmode_id": "7801",
+      "hashmode_name": "SAP CODVN F/G (PASSCODE",
+      "speed": 6476100000.0
+    },
+    "Hash-Mode 7900": {
+      "hashmode_id": "7900",
+      "hashmode_name": "Drupal7",
+      "speed": 342700.0
+    },
+    "Hash-Mode 8000": {
+      "hashmode_id": "8000",
+      "hashmode_name": "Sybase ASE",
+      "speed": 2362500000.0
+    },
+    "Hash-Mode 8100": {
+      "hashmode_id": "8100",
+      "hashmode_name": "Citrix NetScaler (SHA1",
+      "speed": 38844900000.0
+    },
+    "Hash-Mode 8200": {
+      "hashmode_id": "8200",
+      "hashmode_name": "1Password, cloudkeychain",
+      "speed": 69765.0
+    },
+    "Hash-Mode 8300": {
+      "hashmode_id": "8300",
+      "hashmode_name": "DNSSEC (NSEC3",
+      "speed": 16850400000.000002
+    },
+    "Hash-Mode 8400": {
+      "hashmode_id": "8400",
+      "hashmode_name": "WBB3 (Woltlab Burning Board",
+      "speed": 7000800000.0
+    },
+    "Hash-Mode 8500": {
+      "hashmode_id": "8500",
+      "hashmode_name": "RACF",
+      "speed": 17761300000.0
+    },
+    "Hash-Mode 8600": {
+      "hashmode_id": "8600",
+      "hashmode_name": "Lotus Notes/Domino 5",
+      "speed": 2084000000.0
+    },
+    "Hash-Mode 8700": {
+      "hashmode_id": "8700",
+      "hashmode_name": "Lotus Notes/Domino 6",
+      "speed": 684900000.0
+    },
+    "Hash-Mode 8800": {
+      "hashmode_id": "8800",
+      "hashmode_name": "Android FDE <= 4.3",
+      "speed": 4500200.0
+    },
+    "Hash-Mode 8900": {
+      "hashmode_id": "8900",
+      "hashmode_name": "scrypt",
+      "speed": 10387.0
+    },
+    "Hash-Mode 9000": {
+      "hashmode_id": "9000",
+      "hashmode_name": "Password Safe v2",
+      "speed": 4496000.0
+    },
+    "Hash-Mode 9100": {
+      "hashmode_id": "9100",
+      "hashmode_name": "Lotus Notes/Domino 8",
+      "speed": 3740500.0
+    },
+    "Hash-Mode 9200": {
+      "hashmode_id": "9200",
+      "hashmode_name": "Cisco-IOS $8$ (PBKDF2-SHA256",
+      "speed": 376500.0
+    },
+    "Hash-Mode 9300": {
+      "hashmode_id": "9300",
+      "hashmode_name": "Cisco-IOS $9$ (scrypt",
+      "speed": 86051.0
+    },
+    "Hash-Mode 9400": {
+      "hashmode_id": "9400",
+      "hashmode_name": "MS Office 2007",
+      "speed": 808300.0
+    },
+    "Hash-Mode 9500": {
+      "hashmode_id": "9500",
+      "hashmode_name": "MS Office 2010",
+      "speed": 404200.0
+    },
+    "Hash-Mode 9600": {
+      "hashmode_id": "9600",
+      "hashmode_name": "MS Office 2013",
+      "speed": 63788.0
+    },
+    "Hash-Mode 9700": {
+      "hashmode_id": "9700",
+      "hashmode_name": "MS Office <= 2003 $0/$1, MD5 + RC4",
+      "speed": 2733400000.0
+    },
+    "Hash-Mode 9710": {
+      "hashmode_id": "9710",
+      "hashmode_name": "MS Office <= 2003 $0/$1, MD5 + RC4, collider #1",
+      "speed": 3996200000.0
+    },
+    "Hash-Mode 9720": {
+      "hashmode_id": "9720",
+      "hashmode_name": "MS Office <= 2003 $0/$1, MD5 + RC4, collider #2",
+      "speed": 11643400000.0
+    },
+    "Hash-Mode 9800": {
+      "hashmode_id": "9800",
+      "hashmode_name": "MS Office <= 2003 $3/$4, SHA1 + RC4",
+      "speed": 3473900000.0
+    },
+    "Hash-Mode 9810": {
+      "hashmode_id": "9810",
+      "hashmode_name": "MS Office <= 2003 $3, SHA1 + RC4, collider #1",
+      "speed": 3911300000.0
+    },
+    "Hash-Mode 9820": {
+      "hashmode_id": "9820",
+      "hashmode_name": "MS Office <= 2003 $3, SHA1 + RC4, collider #2",
+      "speed": 18279500000.0
+    },
+    "Hash-Mode 9900": {
+      "hashmode_id": "9900",
+      "hashmode_name": "Radmin2",
+      "speed": 47506500000.0
+    },
+    "Hash-Mode 10000": {
+      "hashmode_id": "10000",
+      "hashmode_name": "Django (PBKDF2-SHA256",
+      "speed": 744700.0
+    },
+    "Hash-Mode 10100": {
+      "hashmode_id": "10100",
+      "hashmode_name": "SipHash",
+      "speed": 152000000000.0
+    },
+    "Hash-Mode 10200": {
+      "hashmode_id": "10200",
+      "hashmode_name": "CRAM-MD5",
+      "speed": 21096700000.0
+    },
+    "Hash-Mode 10300": {
+      "hashmode_id": "10300",
+      "hashmode_name": "SAP CODVN H (PWDSALTEDHASH",
+      "speed": 28608900.0
+    },
+    "Hash-Mode 10400": {
+      "hashmode_id": "10400",
+      "hashmode_name": "PDF 1.1 - 1.3 (Acrobat 2 - 4",
+      "speed": 4291600000.0000005
+    },
+    "Hash-Mode 10410": {
+      "hashmode_id": "10410",
+      "hashmode_name": "PDF 1.1 - 1.3 (Acrobat 2 - 4",
+      "speed": 4465700000.0
+    },
+    "Hash-Mode 10420": {
+      "hashmode_id": "10420",
+      "hashmode_name": "PDF 1.1 - 1.3 (Acrobat 2 - 4",
+      "speed": 45684500000.0
+    },
+    "Hash-Mode 10500": {
+      "hashmode_id": "10500",
+      "hashmode_name": "PDF 1.4 - 1.6 (Acrobat 5 - 8",
+      "speed": 131400000.0
+    },
+    "Hash-Mode 10600": {
+      "hashmode_id": "10600",
+      "hashmode_name": "PDF 1.7 Level 3 (Acrobat 9",
+      "speed": 19240500000.0
+    },
+    "Hash-Mode 10700": {
+      "hashmode_id": "10700",
+      "hashmode_name": "PDF 1.7 Level 8 (Acrobat 10 - 11",
+      "speed": 381100.0
+    },
+    "Hash-Mode 10800": {
+      "hashmode_id": "10800",
+      "hashmode_name": "SHA2-384",
+      "speed": 6331700000.0
+    },
+    "Hash-Mode 10810": {
+      "hashmode_id": "10810",
+      "hashmode_name": "sha384($pass.$salt",
+      "speed": 6288500000.0
+    },
+    "Hash-Mode 10820": {
+      "hashmode_id": "10820",
+      "hashmode_name": "sha384($salt.$pass",
+      "speed": 6117100000.0
+    },
+    "Hash-Mode 10830": {
+      "hashmode_id": "10830",
+      "hashmode_name": "sha384(utf16le($pass",
+      "speed": 6343800000.0
+    },
+    "Hash-Mode 10840": {
+      "hashmode_id": "10840",
+      "hashmode_name": "sha384($salt.utf16le($pass",
+      "speed": 6093900000.0
+    },
+    "Hash-Mode 10870": {
+      "hashmode_id": "10870",
+      "hashmode_name": "sha384(utf16le($pass",
+      "speed": 6297800000.0
+    },
+    "Hash-Mode 10900": {
+      "hashmode_id": "10900",
+      "hashmode_name": "PBKDF2-HMAC-SHA256",
+      "speed": 7615500.0
+    },
+    "Hash-Mode 10901": {
+      "hashmode_id": "10901",
+      "hashmode_name": "RedHat 389-DS LDAP (PBKDF2-HMAC-SHA256",
+      "speed": 898000.0
+    },
+    "Hash-Mode 11000": {
+      "hashmode_id": "11000",
+      "hashmode_name": "PrestaShop",
+      "speed": 46400400000.0
+    },
+    "Hash-Mode 11100": {
+      "hashmode_id": "11100",
+      "hashmode_name": "PostgreSQL CRAM (MD5",
+      "speed": 39289800000.0
+    },
+    "Hash-Mode 11200": {
+      "hashmode_id": "11200",
+      "hashmode_name": "MySQL CRAM (SHA1",
+      "speed": 11608500000.0
+    },
+    "Hash-Mode 11300": {
+      "hashmode_id": "11300",
+      "hashmode_name": "Bitcoin/Litecoin wallet.dat",
+      "speed": 29149.0
+    },
+    "Hash-Mode 11400": {
+      "hashmode_id": "11400",
+      "hashmode_name": "SIP digest authentication (MD5",
+      "speed": 18383800000.0
+    },
+    "Hash-Mode 11500": {
+      "hashmode_id": "11500",
+      "hashmode_name": "CRC32",
+      "speed": 45830400000.0
+    },
+    "Hash-Mode 11600": {
+      "hashmode_id": "11600",
+      "hashmode_name": "7-Zip",
+      "speed": 2152900.0
+    },
+    "Hash-Mode 11700": {
+      "hashmode_id": "11700",
+      "hashmode_name": "GOST R 34.11-2012 (Streebog",
+      "speed": 510100000.0
+    },
+    "Hash-Mode 11750": {
+      "hashmode_id": "11750",
+      "hashmode_name": "HMAC-Streebog-256 (key = $pass",
+      "speed": 182200000.0
+    },
+    "Hash-Mode 11760": {
+      "hashmode_id": "11760",
+      "hashmode_name": "HMAC-Streebog-256 (key = $salt",
+      "speed": 253200000.0
+    },
+    "Hash-Mode 11800": {
+      "hashmode_id": "11800",
+      "hashmode_name": "GOST R 34.11-2012 (Streebog",
+      "speed": 512000000.0
+    },
+    "Hash-Mode 11850": {
+      "hashmode_id": "11850",
+      "hashmode_name": "HMAC-Streebog-512 (key = $pass",
+      "speed": 161100000.0
+    },
+    "Hash-Mode 11860": {
+      "hashmode_id": "11860",
+      "hashmode_name": "HMAC-Streebog-512 (key = $salt",
+      "speed": 211500000.0
+    },
+    "Hash-Mode 11900": {
+      "hashmode_id": "11900",
+      "hashmode_name": "PBKDF2-HMAC-MD5",
+      "speed": 39217100.0
+    },
+    "Hash-Mode 12000": {
+      "hashmode_id": "12000",
+      "hashmode_name": "PBKDF2-HMAC-SHA1",
+      "speed": 17327300.0
+    },
+    "Hash-Mode 12001": {
+      "hashmode_id": "12001",
+      "hashmode_name": "Atlassian (PBKDF2-HMAC-SHA1",
+      "speed": 1826900.0
+    },
+    "Hash-Mode 12100": {
+      "hashmode_id": "12100",
+      "hashmode_name": "PBKDF2-HMAC-SHA512",
+      "speed": 2786400.0
+    },
+    "Hash-Mode 12200": {
+      "hashmode_id": "12200",
+      "hashmode_name": "eCryptfs",
+      "speed": 90199.0
+    },
+    "Hash-Mode 12300": {
+      "hashmode_id": "12300",
+      "hashmode_name": "Oracle T: Type (Oracle 12+",
+      "speed": 696700.0
+    },
+    "Hash-Mode 12400": {
+      "hashmode_id": "12400",
+      "hashmode_name": "BSDi Crypt, Extended DES",
+      "speed": 16729400.000000002
+    },
+    "Hash-Mode 12500": {
+      "hashmode_id": "12500",
+      "hashmode_name": "RAR3-hp",
+      "speed": 226100.0
+    },
+    "Hash-Mode 12600": {
+      "hashmode_id": "12600",
+      "hashmode_name": "ColdFusion 10+",
+      "speed": 11008800000.0
+    },
+    "Hash-Mode 12700": {
+      "hashmode_id": "12700",
+      "hashmode_name": "Blockchain, My Wallet",
+      "speed": 171800000.0
+    },
+    "Hash-Mode 12800": {
+      "hashmode_id": "12800",
+      "hashmode_name": "MS-AzureSync PBKDF2-HMAC-SHA256",
+      "speed": 65540899.99999999
+    },
+    "Hash-Mode 12900": {
+      "hashmode_id": "12900",
+      "hashmode_name": "Android FDE (Samsung DEK",
+      "speed": 1926000.0
+    },
+    "Hash-Mode 13000": {
+      "hashmode_id": "13000",
+      "hashmode_name": "RAR5",
+      "speed": 243900.0
+    },
+    "Hash-Mode 13100": {
+      "hashmode_id": "13100",
+      "hashmode_name": "Kerberos 5, etype 23, TGS-REP",
+      "speed": 3379600000.0
+    },
+    "Hash-Mode 13200": {
+      "hashmode_id": "13200",
+      "hashmode_name": "AxCrypt 1",
+      "speed": 1100000.0
+    },
+    "Hash-Mode 13300": {
+      "hashmode_id": "13300",
+      "hashmode_name": "AxCrypt 1 in-memory SHA1",
+      "speed": 42241600000.0
+    },
+    "Hash-Mode 13400": {
+      "hashmode_id": "13400",
+      "hashmode_name": "KeePass 1 (AES/Twofish",
+      "speed": 338200.0
+    },
+    "Hash-Mode 13500": {
+      "hashmode_id": "13500",
+      "hashmode_name": "PeopleSoft PS_TOKEN",
+      "speed": 33107000000.0
+    },
+    "Hash-Mode 13600": {
+      "hashmode_id": "13600",
+      "hashmode_name": "WinZip",
+      "speed": 16713599.999999998
+    },
+    "Hash-Mode 13711": {
+      "hashmode_id": "13711",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 512 bit (legacy",
+      "speed": 5334.0
+    },
+    "Hash-Mode 13712": {
+      "hashmode_id": "13712",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1024 bit (legacy",
+      "speed": 3057.0
+    },
+    "Hash-Mode 13713": {
+      "hashmode_id": "13713",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1536 bit (legacy",
+      "speed": 2143.0
+    },
+    "Hash-Mode 13721": {
+      "hashmode_id": "13721",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 512 bit (legacy",
+      "speed": 5677.0
+    },
+    "Hash-Mode 13722": {
+      "hashmode_id": "13722",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 1024 bit (legacy",
+      "speed": 2781.0
+    },
+    "Hash-Mode 13723": {
+      "hashmode_id": "13723",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 1536 bit (legacy",
+      "speed": 1875.0
+    },
+    "Hash-Mode 13731": {
+      "hashmode_id": "13731",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 512 bit (legacy",
+      "speed": 762.0
+    },
+    "Hash-Mode 13732": {
+      "hashmode_id": "13732",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 1024 bit (legacy",
+      "speed": 375.0
+    },
+    "Hash-Mode 13733": {
+      "hashmode_id": "13733",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 1536 bit (legacy",
+      "speed": 249.0
+    },
+    "Hash-Mode 13741": {
+      "hashmode_id": "13741",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 512 bit + boot-mode (legacy",
+      "speed": 10726.0
+    },
+    "Hash-Mode 13742": {
+      "hashmode_id": "13742",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1024 bit + boot-mode (legacy",
+      "speed": 6060.0
+    },
+    "Hash-Mode 13743": {
+      "hashmode_id": "13743",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1536 bit + boot-mode (legacy",
+      "speed": 4233.0
+    },
+    "Hash-Mode 13751": {
+      "hashmode_id": "13751",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 512 bit (legacy",
+      "speed": 7869.0
+    },
+    "Hash-Mode 13752": {
+      "hashmode_id": "13752",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1024 bit (legacy",
+      "speed": 3883.0
+    },
+    "Hash-Mode 13753": {
+      "hashmode_id": "13753",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1536 bit (legacy",
+      "speed": 2606.0
+    },
+    "Hash-Mode 13761": {
+      "hashmode_id": "13761",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 512 bit + boot-mode (legacy",
+      "speed": 19840.0
+    },
+    "Hash-Mode 13762": {
+      "hashmode_id": "13762",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1024 bit + boot-mode (legacy",
+      "speed": 9646.0
+    },
+    "Hash-Mode 13763": {
+      "hashmode_id": "13763",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1536 bit + boot-mode (legacy",
+      "speed": 6446.0
+    },
+    "Hash-Mode 13771": {
+      "hashmode_id": "13771",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 512 bit (legacy",
+      "speed": 297.0
+    },
+    "Hash-Mode 13772": {
+      "hashmode_id": "13772",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1024 bit (legacy",
+      "speed": 149.0
+    },
+    "Hash-Mode 13773": {
+      "hashmode_id": "13773",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1536 bit (legacy",
+      "speed": 100.0
+    },
+    "Hash-Mode 13781": {
+      "hashmode_id": "13781",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 512 bit + boot-mode (legacy",
+      "speed": 743.0
+    },
+    "Hash-Mode 13782": {
+      "hashmode_id": "13782",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1024 bit + boot-mode (legacy",
+      "speed": 373.0
+    },
+    "Hash-Mode 13783": {
+      "hashmode_id": "13783",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1536 bit + boot-mode (legacy",
+      "speed": 249.0
+    },
+    "Hash-Mode 13800": {
+      "hashmode_id": "13800",
+      "hashmode_name": "Windows Phone 8+ PIN/password",
+      "speed": 5214800000.0
+    },
+    "Hash-Mode 13900": {
+      "hashmode_id": "13900",
+      "hashmode_name": "OpenCart",
+      "speed": 10959100000.0
+    },
+    "Hash-Mode 14000": {
+      "hashmode_id": "14000",
+      "hashmode_name": "DES (PT = $salt, key = $pass",
+      "speed": 135199999999.99998
+    },
+    "Hash-Mode 14100": {
+      "hashmode_id": "14100",
+      "hashmode_name": "3DES (PT = $salt, key = $pass",
+      "speed": 18561200000.0
+    },
+    "Hash-Mode 14400": {
+      "hashmode_id": "14400",
+      "hashmode_name": "sha1(CX",
+      "speed": 2092100000.0
+    },
+    "Hash-Mode 14500": {
+      "hashmode_id": "14500",
+      "hashmode_name": "Linux Kernel Crypto API (2.4",
+      "speed": 5604100000.0
+    },
+    "Hash-Mode 14600": {
+      "hashmode_id": "14600",
+      "hashmode_name": "LUKS v1 (legacy",
+      "speed": 56128.0
+    },
+    "Hash-Mode 14700": {
+      "hashmode_id": "14700",
+      "hashmode_name": "iTunes backup < 10.0",
+      "speed": 909200.0
+    },
+    "Hash-Mode 14800": {
+      "hashmode_id": "14800",
+      "hashmode_name": "iTunes backup >= 10.0",
+      "speed": 757.0
+    },
+    "Hash-Mode 14900": {
+      "hashmode_id": "14900",
+      "hashmode_name": "Skip32 (PT = $salt, key = $pass",
+      "speed": 27376000000.0
+    },
+    "Hash-Mode 15000": {
+      "hashmode_id": "15000",
+      "hashmode_name": "FileZilla Server >= 0.9.55",
+      "speed": 5767700000.0
+    },
+    "Hash-Mode 15100": {
+      "hashmode_id": "15100",
+      "hashmode_name": "Juniper/NetBSD sha1crypt",
+      "speed": 919600.0
+    },
+    "Hash-Mode 15200": {
+      "hashmode_id": "15200",
+      "hashmode_name": "Blockchain, My Wallet, V2",
+      "speed": 1839700.0
+    },
+    "Hash-Mode 15300": {
+      "hashmode_id": "15300",
+      "hashmode_name": "DPAPI masterkey file v1 (context 1 and 2",
+      "speed": 413400.0
+    },
+    "Hash-Mode 15310": {
+      "hashmode_id": "15310",
+      "hashmode_name": "DPAPI masterkey file v1 (context 3",
+      "speed": 386700.0
+    },
+    "Hash-Mode 15400": {
+      "hashmode_id": "15400",
+      "hashmode_name": "ChaCha20",
+      "speed": 20229600000.0
+    },
+    "Hash-Mode 15500": {
+      "hashmode_id": "15500",
+      "hashmode_name": "JKS Java Key Store Private Keys (SHA1",
+      "speed": 44765100000.0
+    },
+    "Hash-Mode 15600": {
+      "hashmode_id": "15600",
+      "hashmode_name": "Ethereum Wallet, PBKDF2-HMAC-SHA256",
+      "speed": 7303700.0
+    },
+    "Hash-Mode 15700": {
+      "hashmode_id": "15700",
+      "hashmode_name": "Ethereum Wallet, SCRYPT",
+      "speed": 1.0
+    },
+    "Hash-Mode 15900": {
+      "hashmode_id": "15900",
+      "hashmode_name": "DPAPI masterkey file v2 (context 1 and 2",
+      "speed": 233800.0
+    },
+    "Hash-Mode 15910": {
+      "hashmode_id": "15910",
+      "hashmode_name": "DPAPI masterkey file v2 (context 3",
+      "speed": 176600.0
+    },
+    "Hash-Mode 16000": {
+      "hashmode_id": "16000",
+      "hashmode_name": "Tripcode",
+      "speed": 1496600000.0
+    },
+    "Hash-Mode 16100": {
+      "hashmode_id": "16100",
+      "hashmode_name": "TACACS+",
+      "speed": 89968700000.0
+    },
+    "Hash-Mode 16200": {
+      "hashmode_id": "16200",
+      "hashmode_name": "Apple Secure Notes",
+      "speed": 394900.0
+    },
+    "Hash-Mode 16300": {
+      "hashmode_id": "16300",
+      "hashmode_name": "Ethereum Pre-Sale Wallet, PBKDF2-HMAC-SHA256",
+      "speed": 3814900.0
+    },
+    "Hash-Mode 16400": {
+      "hashmode_id": "16400",
+      "hashmode_name": "CRAM-MD5 Dovecot",
+      "speed": 124900000000.0
+    },
+    "Hash-Mode 16500": {
+      "hashmode_id": "16500",
+      "hashmode_name": "JWT (JSON Web Token",
+      "speed": 3669300000.0
+    },
+    "Hash-Mode 16600": {
+      "hashmode_id": "16600",
+      "hashmode_name": "Electrum Wallet (Salt-Type 1-3",
+      "speed": 3878900000.0
+    },
+    "Hash-Mode 16700": {
+      "hashmode_id": "16700",
+      "hashmode_name": "FileVault 2",
+      "speed": 374200.0
+    },
+    "Hash-Mode 16900": {
+      "hashmode_id": "16900",
+      "hashmode_name": "Ansible Vault",
+      "speed": 795800.0
+    },
+    "Hash-Mode 17010": {
+      "hashmode_id": "17010",
+      "hashmode_name": "GPG (AES-128/AES-256 (SHA-1($pass",
+      "speed": 23607000.0
+    },
+    "Hash-Mode 17200": {
+      "hashmode_id": "17200",
+      "hashmode_name": "PKZIP (Compressed",
+      "speed": 7224600000.0
+    },
+    "Hash-Mode 17210": {
+      "hashmode_id": "17210",
+      "hashmode_name": "PKZIP (Uncompressed",
+      "speed": 8795100000.0
+    },
+    "Hash-Mode 17220": {
+      "hashmode_id": "17220",
+      "hashmode_name": "PKZIP (Compressed Multi-File",
+      "speed": 44123900000.0
+    },
+    "Hash-Mode 17225": {
+      "hashmode_id": "17225",
+      "hashmode_name": "PKZIP (Mixed Multi-File",
+      "speed": 48080200000.0
+    },
+    "Hash-Mode 17230": {
+      "hashmode_id": "17230",
+      "hashmode_name": "PKZIP (Mixed Multi-File Checksum-Only",
+      "speed": 48748500000.0
+    },
+    "Hash-Mode 17300": {
+      "hashmode_id": "17300",
+      "hashmode_name": "SHA3-224",
+      "speed": 4697400000.0
+    },
+    "Hash-Mode 17400": {
+      "hashmode_id": "17400",
+      "hashmode_name": "SHA3-256",
+      "speed": 4680200000.0
+    },
+    "Hash-Mode 17500": {
+      "hashmode_id": "17500",
+      "hashmode_name": "SHA3-384",
+      "speed": 4662900000.0
+    },
+    "Hash-Mode 17600": {
+      "hashmode_id": "17600",
+      "hashmode_name": "SHA3-512",
+      "speed": 4679900000.0
+    },
+    "Hash-Mode 17700": {
+      "hashmode_id": "17700",
+      "hashmode_name": "Keccak-224",
+      "speed": 4610200000.0
+    },
+    "Hash-Mode 17800": {
+      "hashmode_id": "17800",
+      "hashmode_name": "Keccak-256",
+      "speed": 4693700000.0
+    },
+    "Hash-Mode 17900": {
+      "hashmode_id": "17900",
+      "hashmode_name": "Keccak-384",
+      "speed": 4673100000.0
+    },
+    "Hash-Mode 18000": {
+      "hashmode_id": "18000",
+      "hashmode_name": "Keccak-512",
+      "speed": 4659100000.0
+    },
+    "Hash-Mode 18100": {
+      "hashmode_id": "18100",
+      "hashmode_name": "TOTP (HMAC-SHA1",
+      "speed": 8980200000.0
+    },
+    "Hash-Mode 18200": {
+      "hashmode_id": "18200",
+      "hashmode_name": "Kerberos 5, etype 23, AS-REP",
+      "speed": 3408000000.0
+    },
+    "Hash-Mode 18300": {
+      "hashmode_id": "18300",
+      "hashmode_name": "Apple File System (APFS",
+      "speed": 393700.0
+    },
+    "Hash-Mode 18400": {
+      "hashmode_id": "18400",
+      "hashmode_name": "Open Document Format (ODF",
+      "speed": 89698.0
+    },
+    "Hash-Mode 18500": {
+      "hashmode_id": "18500",
+      "hashmode_name": "sha1(md5(md5($pass",
+      "speed": 15867800000.0
+    },
+    "Hash-Mode 18600": {
+      "hashmode_id": "18600",
+      "hashmode_name": "Open Document Format (ODF",
+      "speed": 6407400.0
+    },
+    "Hash-Mode 18700": {
+      "hashmode_id": "18700",
+      "hashmode_name": "Java Object hashCode(",
+      "speed": 784800000000.0
+    },
+    "Hash-Mode 18800": {
+      "hashmode_id": "18800",
+      "hashmode_name": "Blockchain, My Wallet, Second Password (SHA256",
+      "speed": 1594300.0
+    },
+    "Hash-Mode 18900": {
+      "hashmode_id": "18900",
+      "hashmode_name": "Android Backup",
+      "speed": 900200.0
+    },
+    "Hash-Mode 19000": {
+      "hashmode_id": "19000",
+      "hashmode_name": "QNX /etc/shadow (MD5",
+      "speed": 114700000.0
+    },
+    "Hash-Mode 19100": {
+      "hashmode_id": "19100",
+      "hashmode_name": "QNX /etc/shadow (SHA256",
+      "speed": 69069400.0
+    },
+    "Hash-Mode 19200": {
+      "hashmode_id": "19200",
+      "hashmode_name": "QNX /etc/shadow (SHA512",
+      "speed": 49122500.0
+    },
+    "Hash-Mode 19300": {
+      "hashmode_id": "19300",
+      "hashmode_name": "sha1($salt1.$pass.$salt2",
+      "speed": 6046100000.0
+    },
+    "Hash-Mode 19500": {
+      "hashmode_id": "19500",
+      "hashmode_name": "Ruby on Rails Restful-Authentication",
+      "speed": 470000000.0
+    },
+    "Hash-Mode 19600": {
+      "hashmode_id": "19600",
+      "hashmode_name": "Kerberos 5, etype 17, TGS-REP",
+      "speed": 4437200.0
+    },
+    "Hash-Mode 19700": {
+      "hashmode_id": "19700",
+      "hashmode_name": "Kerberos 5, etype 18, TGS-REP",
+      "speed": 2250100.0
+    },
+    "Hash-Mode 19800": {
+      "hashmode_id": "19800",
+      "hashmode_name": "Kerberos 5, etype 17, Pre-Auth",
+      "speed": 4524000.0
+    },
+    "Hash-Mode 19900": {
+      "hashmode_id": "19900",
+      "hashmode_name": "Kerberos 5, etype 18, Pre-Auth",
+      "speed": 2229200.0
+    },
+    "Hash-Mode 20011": {
+      "hashmode_id": "20011",
+      "hashmode_name": "DiskCryptor SHA512 + XTS 512 bit",
+      "speed": 2430100.0
+    },
+    "Hash-Mode 20012": {
+      "hashmode_id": "20012",
+      "hashmode_name": "DiskCryptor SHA512 + XTS 1024 bit",
+      "speed": 1223100.0
+    },
+    "Hash-Mode 20013": {
+      "hashmode_id": "20013",
+      "hashmode_name": "DiskCryptor SHA512 + XTS 1536 bit",
+      "speed": 792600.0
+    },
+    "Hash-Mode 20200": {
+      "hashmode_id": "20200",
+      "hashmode_name": "Python passlib pbkdf2-sha512",
+      "speed": 113700.0
+    },
+    "Hash-Mode 20300": {
+      "hashmode_id": "20300",
+      "hashmode_name": "Python passlib pbkdf2-sha256",
+      "speed": 261800.0
+    },
+    "Hash-Mode 20400": {
+      "hashmode_id": "20400",
+      "hashmode_name": "Python passlib pbkdf2-sha1",
+      "speed": 137900.0
+    },
+    "Hash-Mode 20500": {
+      "hashmode_id": "20500",
+      "hashmode_name": "PKZIP Master Key",
+      "speed": 474700000000.0
+    },
+    "Hash-Mode 20510": {
+      "hashmode_id": "20510",
+      "hashmode_name": "PKZIP Master Key (6 byte optimization",
+      "speed": 109100000000.0
+    },
+    "Hash-Mode 20600": {
+      "hashmode_id": "20600",
+      "hashmode_name": "Oracle Transportation Management (SHA256",
+      "speed": 15272900.0
+    },
+    "Hash-Mode 20710": {
+      "hashmode_id": "20710",
+      "hashmode_name": "sha256(sha256($pass",
+      "speed": 5316900000.0
+    },
+    "Hash-Mode 20711": {
+      "hashmode_id": "20711",
+      "hashmode_name": "AuthMe sha256",
+      "speed": 5287700000.0
+    },
+    "Hash-Mode 20720": {
+      "hashmode_id": "20720",
+      "hashmode_name": "sha256($salt.sha256($pass",
+      "speed": 4647600000.0
+    },
+    "Hash-Mode 20800": {
+      "hashmode_id": "20800",
+      "hashmode_name": "sha256(md5($pass",
+      "speed": 14358100000.0
+    },
+    "Hash-Mode 20900": {
+      "hashmode_id": "20900",
+      "hashmode_name": "md5(sha1($pass",
+      "speed": 13503600000.0
+    },
+    "Hash-Mode 21000": {
+      "hashmode_id": "21000",
+      "hashmode_name": "BitShares v0.x - sha512(sha512_bin(pass",
+      "speed": 2980900000.0
+    },
+    "Hash-Mode 21100": {
+      "hashmode_id": "21100",
+      "hashmode_name": "sha1(md5($pass.$salt",
+      "speed": 24037600000.0
+    },
+    "Hash-Mode 21200": {
+      "hashmode_id": "21200",
+      "hashmode_name": "md5(sha1($salt",
+      "speed": 29037500000.0
+    },
+    "Hash-Mode 21300": {
+      "hashmode_id": "21300",
+      "hashmode_name": "md5($salt.sha1($salt.$pass",
+      "speed": 18466000000.0
+    },
+    "Hash-Mode 21400": {
+      "hashmode_id": "21400",
+      "hashmode_name": "sha256(sha256_bin($pass",
+      "speed": 8698100000.0
+    },
+    "Hash-Mode 21420": {
+      "hashmode_id": "21420",
+      "hashmode_name": "sha256($salt.sha256_bin($pass",
+      "speed": 4782600000.0
+    },
+    "Hash-Mode 21500": {
+      "hashmode_id": "21500",
+      "hashmode_name": "SolarWinds Orion",
+      "speed": 315700.0
+    },
+    "Hash-Mode 21501": {
+      "hashmode_id": "21501",
+      "hashmode_name": "SolarWinds Orion v2",
+      "speed": 315100.0
+    },
+    "Hash-Mode 21600": {
+      "hashmode_id": "21600",
+      "hashmode_name": "Web2py pbkdf2-sha512",
+      "speed": 2646600.0
+    },
+    "Hash-Mode 21700": {
+      "hashmode_id": "21700",
+      "hashmode_name": "Electrum Wallet (Salt-Type 4",
+      "speed": 1708500.0
+    },
+    "Hash-Mode 21800": {
+      "hashmode_id": "21800",
+      "hashmode_name": "Electrum Wallet (Salt-Type 5",
+      "speed": 1820100.0
+    },
+    "Hash-Mode 22000": {
+      "hashmode_id": "22000",
+      "hashmode_name": "WPA-PBKDF2-PMKID+EAPOL",
+      "speed": 2268200.0
+    },
+    "Hash-Mode 22001": {
+      "hashmode_id": "22001",
+      "hashmode_name": "WPA-PMK-PMKID+EAPOL",
+      "speed": 332600000.0
+    },
+    "Hash-Mode 22100": {
+      "hashmode_id": "22100",
+      "hashmode_name": "BitLocker",
+      "speed": 8893.0
+    },
+    "Hash-Mode 22200": {
+      "hashmode_id": "22200",
+      "hashmode_name": "Citrix NetScaler (SHA512",
+      "speed": 6348500000.0
+    },
+    "Hash-Mode 22300": {
+      "hashmode_id": "22300",
+      "hashmode_name": "sha256($salt.$pass.$salt",
+      "speed": 17504200000.0
+    },
+    "Hash-Mode 22301": {
+      "hashmode_id": "22301",
+      "hashmode_name": "Telegram Mobile App Passcode (SHA256",
+      "speed": 17454600000.0
+    },
+    "Hash-Mode 22400": {
+      "hashmode_id": "22400",
+      "hashmode_name": "AES Crypt (SHA256",
+      "speed": 1899600.0
+    },
+    "Hash-Mode 22500": {
+      "hashmode_id": "22500",
+      "hashmode_name": "MultiBit Classic .key (MD5",
+      "speed": 5205700000.0
+    },
+    "Hash-Mode 22600": {
+      "hashmode_id": "22600",
+      "hashmode_name": "Telegram Desktop < v2.1.14 (PBKDF2-HMAC-SHA1",
+      "speed": 635700.0
+    },
+    "Hash-Mode 22700": {
+      "hashmode_id": "22700",
+      "hashmode_name": "MultiBit HD (scrypt",
+      "speed": 10770.0
+    },
+    "Hash-Mode 22911": {
+      "hashmode_id": "22911",
+      "hashmode_name": "RSA/DSA/EC/OpenSSH Private Keys ($0$",
+      "speed": 4253800000.0
+    },
+    "Hash-Mode 22921": {
+      "hashmode_id": "22921",
+      "hashmode_name": "RSA/DSA/EC/OpenSSH Private Keys ($6$",
+      "speed": 12189900000.0
+    },
+    "Hash-Mode 22931": {
+      "hashmode_id": "22931",
+      "hashmode_name": "RSA/DSA/EC/OpenSSH Private Keys ($1, $3$",
+      "speed": 7268800000.0
+    },
+    "Hash-Mode 22941": {
+      "hashmode_id": "22941",
+      "hashmode_name": "RSA/DSA/EC/OpenSSH Private Keys ($4$",
+      "speed": 5868400000.0
+    },
+    "Hash-Mode 22951": {
+      "hashmode_id": "22951",
+      "hashmode_name": "RSA/DSA/EC/OpenSSH Private Keys ($5$",
+      "speed": 4982900000.0
+    },
+    "Hash-Mode 23001": {
+      "hashmode_id": "23001",
+      "hashmode_name": "SecureZIP AES-128",
+      "speed": 6094900000.0
+    },
+    "Hash-Mode 23002": {
+      "hashmode_id": "23002",
+      "hashmode_name": "SecureZIP AES-192",
+      "speed": 4385300000.0
+    },
+    "Hash-Mode 23003": {
+      "hashmode_id": "23003",
+      "hashmode_name": "SecureZIP AES-256",
+      "speed": 3874600000.0
+    },
+    "Hash-Mode 23100": {
+      "hashmode_id": "23100",
+      "hashmode_name": "Apple Keychain",
+      "speed": 8905500.0
+    },
+    "Hash-Mode 23200": {
+      "hashmode_id": "23200",
+      "hashmode_name": "XMPP SCRAM PBKDF2-SHA1",
+      "speed": 4402700.0
+    },
+    "Hash-Mode 23300": {
+      "hashmode_id": "23300",
+      "hashmode_name": "Apple iWork",
+      "speed": 4668900.0
+    },
+    "Hash-Mode 23400": {
+      "hashmode_id": "23400",
+      "hashmode_name": "Bitwarden",
+      "speed": 80175.0
+    },
+    "Hash-Mode 23500": {
+      "hashmode_id": "23500",
+      "hashmode_name": "AxCrypt 2 AES-128",
+      "speed": 462600.0
+    },
+    "Hash-Mode 23600": {
+      "hashmode_id": "23600",
+      "hashmode_name": "AxCrypt 2 AES-256",
+      "speed": 245200.0
+    },
+    "Hash-Mode 23700": {
+      "hashmode_id": "23700",
+      "hashmode_name": "RAR3-p (Uncompressed",
+      "speed": 234200.0
+    },
+    "Hash-Mode 23800": {
+      "hashmode_id": "23800",
+      "hashmode_name": "RAR3-p (Compressed",
+      "speed": 210700.0
+    },
+    "Hash-Mode 23900": {
+      "hashmode_id": "23900",
+      "hashmode_name": "BestCrypt v3 Volume Encryption",
+      "speed": 10020400.0
+    },
+    "Hash-Mode 24100": {
+      "hashmode_id": "24100",
+      "hashmode_name": "MongoDB ServerKey SCRAM-SHA-1",
+      "speed": 1830200.0
+    },
+    "Hash-Mode 24200": {
+      "hashmode_id": "24200",
+      "hashmode_name": "MongoDB ServerKey SCRAM-SHA-256",
+      "speed": 531100.0
+    },
+    "Hash-Mode 24300": {
+      "hashmode_id": "24300",
+      "hashmode_name": "sha1($salt.sha1($pass.$salt",
+      "speed": 16311300000.0
+    },
+    "Hash-Mode 24410": {
+      "hashmode_id": "24410",
+      "hashmode_name": "PKCS#8 Private Keys (PBKDF2-HMAC-SHA1 + 3DES/AES",
+      "speed": 4472500.0
+    },
+    "Hash-Mode 24420": {
+      "hashmode_id": "24420",
+      "hashmode_name": "PKCS#8 Private Keys (PBKDF2-HMAC-SHA256 + 3DES/AES",
+      "speed": 3550300.0
+    },
+    "Hash-Mode 24500": {
+      "hashmode_id": "24500",
+      "hashmode_name": "Telegram Desktop >= v2.1.14 (PBKDF2-HMAC-SHA512",
+      "speed": 9402.0
+    },
+    "Hash-Mode 24600": {
+      "hashmode_id": "24600",
+      "hashmode_name": "SQLCipher",
+      "speed": 141100.0
+    },
+    "Hash-Mode 24700": {
+      "hashmode_id": "24700",
+      "hashmode_name": "Stuffit5",
+      "speed": 46569400000.0
+    },
+    "Hash-Mode 24800": {
+      "hashmode_id": "24800",
+      "hashmode_name": "Umbraco HMAC-SHA1",
+      "speed": 9392100000.0
+    },
+    "Hash-Mode 24900": {
+      "hashmode_id": "24900",
+      "hashmode_name": "Dahua Authentication MD5",
+      "speed": 72152900000.0
+    },
+    "Hash-Mode 25000": {
+      "hashmode_id": "25000",
+      "hashmode_name": "SNMPv3 HMAC-MD5-96/HMAC-SHA1-96",
+      "speed": 1001800.0
+    },
+    "Hash-Mode 25100": {
+      "hashmode_id": "25100",
+      "hashmode_name": "SNMPv3 HMAC-MD5-96",
+      "speed": 0.0
+    },
+    "Hash-Mode 25200": {
+      "hashmode_id": "25200",
+      "hashmode_name": "SNMPv3 HMAC-SHA1-96",
+      "speed": 0.0
+    },
+    "Hash-Mode 25300": {
+      "hashmode_id": "25300",
+      "hashmode_name": "MS Office 2016 - SheetProtection",
+      "speed": 64316.0
+    },
+    "Hash-Mode 25400": {
+      "hashmode_id": "25400",
+      "hashmode_name": "PDF 1.4 - 1.6 (Acrobat 5 - 8",
+      "speed": 129800000.00000001
+    },
+    "Hash-Mode 25500": {
+      "hashmode_id": "25500",
+      "hashmode_name": "Stargazer Stellar Wallet XLM",
+      "speed": 1824000.0
+    },
+    "Hash-Mode 25600": {
+      "hashmode_id": "25600",
+      "hashmode_name": "bcrypt(md5($pass",
+      "speed": 201600.0
+    },
+    "Hash-Mode 25700": {
+      "hashmode_id": "25700",
+      "hashmode_name": "MurmurHash",
+      "speed": 570400000000.0
+    },
+    "Hash-Mode 25800": {
+      "hashmode_id": "25800",
+      "hashmode_name": "bcrypt(sha1($pass",
+      "speed": 202000.0
+    },
+    "Hash-Mode 25900": {
+      "hashmode_id": "25900",
+      "hashmode_name": "KNX IP Secure - Device Authentication Code",
+      "speed": 122500.0
+    },
+    "Hash-Mode 26000": {
+      "hashmode_id": "26000",
+      "hashmode_name": "Mozilla key3.db",
+      "speed": 1106900000.0
+    },
+    "Hash-Mode 26100": {
+      "hashmode_id": "26100",
+      "hashmode_name": "Mozilla key4.db",
+      "speed": 754200.0
+    },
+    "Hash-Mode 26200": {
+      "hashmode_id": "26200",
+      "hashmode_name": "OpenEdge Progress Encode",
+      "speed": 279500000.0
+    },
+    "Hash-Mode 26300": {
+      "hashmode_id": "26300",
+      "hashmode_name": "FortiGate256 (FortiOS256",
+      "speed": 13763000000.0
+    },
+    "Hash-Mode 26401": {
+      "hashmode_id": "26401",
+      "hashmode_name": "AES-128-ECB NOKDF (PT = $salt, key = $pass",
+      "speed": 21172800000.0
+    },
+    "Hash-Mode 26402": {
+      "hashmode_id": "26402",
+      "hashmode_name": "AES-192-ECB NOKDF (PT = $salt, key = $pass",
+      "speed": 18326300000.0
+    },
+    "Hash-Mode 26403": {
+      "hashmode_id": "26403",
+      "hashmode_name": "AES-256-ECB NOKDF (PT = $salt, key = $pass",
+      "speed": 15139700000.0
+    },
+    "Hash-Mode 26500": {
+      "hashmode_id": "26500",
+      "hashmode_name": "iPhone passcode (UID key + System Keybag",
+      "speed": 230300.0
+    },
+    "Hash-Mode 26600": {
+      "hashmode_id": "26600",
+      "hashmode_name": "MetaMask Wallet",
+      "speed": 738800.0
+    },
+    "Hash-Mode 26700": {
+      "hashmode_id": "26700",
+      "hashmode_name": "SNMPv3 HMAC-SHA224-128",
+      "speed": 0.0
+    },
+    "Hash-Mode 26800": {
+      "hashmode_id": "26800",
+      "hashmode_name": "SNMPv3 HMAC-SHA256-192",
+      "speed": 0.0
+    },
+    "Hash-Mode 26900": {
+      "hashmode_id": "26900",
+      "hashmode_name": "SNMPv3 HMAC-SHA384-256",
+      "speed": 527700.0
+    },
+    "Hash-Mode 27000": {
+      "hashmode_id": "27000",
+      "hashmode_name": "NetNTLMv1 / NetNTLMv1+ESS (NT",
+      "speed": 338000000.0
+    },
+    "Hash-Mode 27100": {
+      "hashmode_id": "27100",
+      "hashmode_name": "NetNTLMv2 (NT",
+      "speed": 324700000.0
+    },
+    "Hash-Mode 27200": {
+      "hashmode_id": "27200",
+      "hashmode_name": "Ruby on Rails Restful Auth (one round, no sitekey",
+      "speed": 42266700000.0
+    },
+    "Hash-Mode 27300": {
+      "hashmode_id": "27300",
+      "hashmode_name": "SNMPv3 HMAC-SHA512-384",
+      "speed": 528500.0
+    },
+    "Hash-Mode 27400": {
+      "hashmode_id": "27400",
+      "hashmode_name": "VMware VMX (PBKDF2-HMAC-SHA1 + AES-256-CBC",
+      "speed": 906500.0
+    },
+    "Hash-Mode 27500": {
+      "hashmode_id": "27500",
+      "hashmode_name": "VirtualBox (PBKDF2-HMAC-SHA256 & AES-128-XTS",
+      "speed": 27019.0
+    },
+    "Hash-Mode 27600": {
+      "hashmode_id": "27600",
+      "hashmode_name": "VirtualBox (PBKDF2-HMAC-SHA256 & AES-256-XTS",
+      "speed": 20853.0
+    },
+    "Hash-Mode 27700": {
+      "hashmode_id": "27700",
+      "hashmode_name": "MultiBit Classic .wallet (scrypt",
+      "speed": 10575.0
+    },
+    "Hash-Mode 27800": {
+      "hashmode_id": "27800",
+      "hashmode_name": "MurmurHash3",
+      "speed": 511400000000.0
+    },
+    "Hash-Mode 27900": {
+      "hashmode_id": "27900",
+      "hashmode_name": "CRC32C",
+      "speed": 46298000000.0
+    },
+    "Hash-Mode 28000": {
+      "hashmode_id": "28000",
+      "hashmode_name": "CRC64Jones",
+      "speed": 229000000000.0
+    },
+    "Hash-Mode 28100": {
+      "hashmode_id": "28100",
+      "hashmode_name": "Windows Hello PIN/Password",
+      "speed": 744100.0
+    },
+    "Hash-Mode 28200": {
+      "hashmode_id": "28200",
+      "hashmode_name": "Exodus Desktop Wallet (scrypt",
+      "speed": 10187.0
+    },
+    "Hash-Mode 28300": {
+      "hashmode_id": "28300",
+      "hashmode_name": "Teamspeak 3 (channel hash",
+      "speed": 7442800000.0
+    },
+    "Hash-Mode 28400": {
+      "hashmode_id": "28400",
+      "hashmode_name": "bcrypt(sha512($pass",
+      "speed": 2138.0
+    },
+    "Hash-Mode 28501": {
+      "hashmode_id": "28501",
+      "hashmode_name": "Bitcoin WIF private key (P2PKH",
+      "speed": 321700000000.0
+    },
+    "Hash-Mode 28502": {
+      "hashmode_id": "28502",
+      "hashmode_name": "Bitcoin WIF private key (P2PKH",
+      "speed": 396500000000.0
+    },
+    "Hash-Mode 28503": {
+      "hashmode_id": "28503",
+      "hashmode_name": "Bitcoin WIF private key (P2WPKH, Bech32",
+      "speed": 345100000000.0
+    },
+    "Hash-Mode 28504": {
+      "hashmode_id": "28504",
+      "hashmode_name": "Bitcoin WIF private key (P2WPKH, Bech32",
+      "speed": 414000000000.0
+    },
+    "Hash-Mode 28505": {
+      "hashmode_id": "28505",
+      "hashmode_name": "Bitcoin WIF private key (P2SH(P2WPKH",
+      "speed": 333700000000.0
+    },
+    "Hash-Mode 28506": {
+      "hashmode_id": "28506",
+      "hashmode_name": "Bitcoin WIF private key (P2SH(P2WPKH",
+      "speed": 393300000000.0
+    },
+    "Hash-Mode 28600": {
+      "hashmode_id": "28600",
+      "hashmode_name": "PostgreSQL SCRAM-SHA-256",
+      "speed": 1937800.0
+    },
+    "Hash-Mode 28700": {
+      "hashmode_id": "28700",
+      "hashmode_name": "Amazon AWS4-HMAC-SHA256",
+      "speed": 538100000.0
+    },
+    "Hash-Mode 28800": {
+      "hashmode_id": "28800",
+      "hashmode_name": "Kerberos 5, etype 17, DB",
+      "speed": 4556800.0
+    },
+    "Hash-Mode 28900": {
+      "hashmode_id": "28900",
+      "hashmode_name": "Kerberos 5, etype 18, DB",
+      "speed": 2265900.0
+    },
+    "Hash-Mode 29000": {
+      "hashmode_id": "29000",
+      "hashmode_name": "sha1($salt.sha1(utf16le($username",
+      "speed": 15257100000.0
+    },
+    "Hash-Mode 29100": {
+      "hashmode_id": "29100",
+      "hashmode_name": "Flask Session Cookie ($salt.$salt.$pass",
+      "speed": 3024300000.0
+    },
+    "Hash-Mode 29200": {
+      "hashmode_id": "29200",
+      "hashmode_name": "Radmin3",
+      "speed": 3946600.0
+    },
+    "Hash-Mode 29311": {
+      "hashmode_id": "29311",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit",
+      "speed": 1628500.0
+    },
+    "Hash-Mode 29312": {
+      "hashmode_id": "29312",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1024 bit",
+      "speed": 889100.0
+    },
+    "Hash-Mode 29313": {
+      "hashmode_id": "29313",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1536 bit",
+      "speed": 610900.0
+    },
+    "Hash-Mode 29321": {
+      "hashmode_id": "29321",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 512 bit",
+      "speed": 2398000.0
+    },
+    "Hash-Mode 29322": {
+      "hashmode_id": "29322",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 1024 bit",
+      "speed": 1152200.0
+    },
+    "Hash-Mode 29323": {
+      "hashmode_id": "29323",
+      "hashmode_name": "TrueCrypt SHA512 + XTS 1536 bit",
+      "speed": 768400.0
+    },
+    "Hash-Mode 29331": {
+      "hashmode_id": "29331",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 512 bit",
+      "speed": 372300.0
+    },
+    "Hash-Mode 29332": {
+      "hashmode_id": "29332",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 1024 bit",
+      "speed": 183400.0
+    },
+    "Hash-Mode 29333": {
+      "hashmode_id": "29333",
+      "hashmode_name": "TrueCrypt Whirlpool + XTS 1536 bit",
+      "speed": 123000.0
+    },
+    "Hash-Mode 29341": {
+      "hashmode_id": "29341",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit + boot-mode",
+      "speed": 2998700.0
+    },
+    "Hash-Mode 29342": {
+      "hashmode_id": "29342",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1024 bit + boot-mode",
+      "speed": 1582800.0
+    },
+    "Hash-Mode 29343": {
+      "hashmode_id": "29343",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 1536 bit + boot-mode",
+      "speed": 1071200.0
+    },
+    "Hash-Mode 29411": {
+      "hashmode_id": "29411",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 512 bit",
+      "speed": 5270.0
+    },
+    "Hash-Mode 29412": {
+      "hashmode_id": "29412",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1024 bit",
+      "speed": 3003.0
+    },
+    "Hash-Mode 29413": {
+      "hashmode_id": "29413",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1536 bit",
+      "speed": 2103.0
+    },
+    "Hash-Mode 29421": {
+      "hashmode_id": "29421",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 512 bit",
+      "speed": 5494.0
+    },
+    "Hash-Mode 29422": {
+      "hashmode_id": "29422",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 1024 bit",
+      "speed": 2727.0
+    },
+    "Hash-Mode 29423": {
+      "hashmode_id": "29423",
+      "hashmode_name": "VeraCrypt SHA512 + XTS 1536 bit",
+      "speed": 1858.0
+    },
+    "Hash-Mode 29431": {
+      "hashmode_id": "29431",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 512 bit",
+      "speed": 749.0
+    },
+    "Hash-Mode 29432": {
+      "hashmode_id": "29432",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 1024 bit",
+      "speed": 374.0
+    },
+    "Hash-Mode 29433": {
+      "hashmode_id": "29433",
+      "hashmode_name": "VeraCrypt Whirlpool + XTS 1536 bit",
+      "speed": 249.0
+    },
+    "Hash-Mode 29441": {
+      "hashmode_id": "29441",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 512 bit + boot-mode",
+      "speed": 10663.0
+    },
+    "Hash-Mode 29442": {
+      "hashmode_id": "29442",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1024 bit + boot-mode",
+      "speed": 6037.0
+    },
+    "Hash-Mode 29443": {
+      "hashmode_id": "29443",
+      "hashmode_name": "VeraCrypt RIPEMD160 + XTS 1536 bit + boot-mode",
+      "speed": 4214.0
+    },
+    "Hash-Mode 29451": {
+      "hashmode_id": "29451",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 512 bit",
+      "speed": 7794.0
+    },
+    "Hash-Mode 29452": {
+      "hashmode_id": "29452",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1024 bit",
+      "speed": 3823.0
+    },
+    "Hash-Mode 29453": {
+      "hashmode_id": "29453",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1536 bit",
+      "speed": 2578.0
+    },
+    "Hash-Mode 29461": {
+      "hashmode_id": "29461",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 512 bit + boot-mode",
+      "speed": 19506.0
+    },
+    "Hash-Mode 29462": {
+      "hashmode_id": "29462",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1024 bit + boot-mode",
+      "speed": 9519.0
+    },
+    "Hash-Mode 29463": {
+      "hashmode_id": "29463",
+      "hashmode_name": "VeraCrypt SHA256 + XTS 1536 bit + boot-mode",
+      "speed": 6426.0
+    },
+    "Hash-Mode 29471": {
+      "hashmode_id": "29471",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 512 bit",
+      "speed": 296.0
+    },
+    "Hash-Mode 29472": {
+      "hashmode_id": "29472",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1024 bit",
+      "speed": 149.0
+    },
+    "Hash-Mode 29473": {
+      "hashmode_id": "29473",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1536 bit",
+      "speed": 100.0
+    },
+    "Hash-Mode 29481": {
+      "hashmode_id": "29481",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 512 bit + boot-mode",
+      "speed": 744.0
+    },
+    "Hash-Mode 29482": {
+      "hashmode_id": "29482",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1024 bit + boot-mode",
+      "speed": 373.0
+    },
+    "Hash-Mode 29483": {
+      "hashmode_id": "29483",
+      "hashmode_name": "VeraCrypt Streebog-512 + XTS 1536 bit + boot-mode",
+      "speed": 249.0
+    },
+    "Hash-Mode 29511": {
+      "hashmode_id": "29511",
+      "hashmode_name": "LUKS v1 SHA-1 + AES",
+      "speed": 118900.0
+    },
+    "Hash-Mode 29512": {
+      "hashmode_id": "29512",
+      "hashmode_name": "LUKS v1 SHA-1 + Serpent",
+      "speed": 60001.0
+    },
+    "Hash-Mode 29513": {
+      "hashmode_id": "29513",
+      "hashmode_name": "LUKS v1 SHA-1 + Twofish",
+      "speed": 60597.0
+    },
+    "Hash-Mode 29521": {
+      "hashmode_id": "29521",
+      "hashmode_name": "LUKS v1 SHA-256 + AES",
+      "speed": 81574.0
+    },
+    "Hash-Mode 29522": {
+      "hashmode_id": "29522",
+      "hashmode_name": "LUKS v1 SHA-256 + Serpent",
+      "speed": 41011.0
+    },
+    "Hash-Mode 29523": {
+      "hashmode_id": "29523",
+      "hashmode_name": "LUKS v1 SHA-256 + Twofish",
+      "speed": 81682.0
+    },
+    "Hash-Mode 29531": {
+      "hashmode_id": "29531",
+      "hashmode_name": "LUKS v1 SHA-512 + AES",
+      "speed": 38789.0
+    },
+    "Hash-Mode 29532": {
+      "hashmode_id": "29532",
+      "hashmode_name": "LUKS v1 SHA-512 + Serpent",
+      "speed": 38960.0
+    },
+    "Hash-Mode 29533": {
+      "hashmode_id": "29533",
+      "hashmode_name": "LUKS v1 SHA-512 + Twofish",
+      "speed": 10659.0
+    },
+    "Hash-Mode 29541": {
+      "hashmode_id": "29541",
+      "hashmode_name": "LUKS v1 RIPEMD-160 + AES",
+      "speed": 68006.0
+    },
+    "Hash-Mode 29542": {
+      "hashmode_id": "29542",
+      "hashmode_name": "LUKS v1 RIPEMD-160 + Serpent",
+      "speed": 66078.0
+    },
+    "Hash-Mode 29543": {
+      "hashmode_id": "29543",
+      "hashmode_name": "LUKS v1 RIPEMD-160 + Twofish",
+      "speed": 135200.0
+    },
+    "Hash-Mode 29600": {
+      "hashmode_id": "29600",
+      "hashmode_name": "Terra Station Wallet (AES256-CBC(PBKDF2($pass",
+      "speed": 65923399.99999999
+    },
+    "Hash-Mode 29700": {
+      "hashmode_id": "29700",
+      "hashmode_name": "KeePass 1 (AES/Twofish",
+      "speed": 139500.0
+    },
+    "Hash-Mode 30000": {
+      "hashmode_id": "30000",
+      "hashmode_name": "Python Werkzeug MD5 (HMAC-MD5 (key = $salt",
+      "speed": 44407300000.0
+    },
+    "Hash-Mode 30120": {
+      "hashmode_id": "30120",
+      "hashmode_name": "Python Werkzeug SHA256 (HMAC-SHA256 (key = $salt",
+      "speed": 8273000000.0
+    },
+    "Hash-Mode 99999": {
+      "hashmode_id": "99999",
+      "hashmode_name": "Plaintext",
+      "speed": 215400000000.0
+    }
+  },
   "RTX4080": {
     "Hash-Mode 0": {
       "hashmode_id": "0",
