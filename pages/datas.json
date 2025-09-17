@@ -8241,6 +8241,133 @@
       "speed": 1483600000.0
     }
   },
+  "CMP90HX": {
+    "Hash-Mode 0": {
+      "hashmode_id": "0",
+      "hashmode_name": "MD5",
+      "speed": 41533200000.0
+    },
+    "Hash-Mode 100": {
+      "hashmode_id": "100",
+      "hashmode_name": "SHA1",
+      "speed": 13788100000.0
+    },
+    "Hash-Mode 1400": {
+      "hashmode_id": "1400",
+      "hashmode_name": "SHA2-256",
+      "speed": 5926300000.0
+    },
+    "Hash-Mode 1700": {
+      "hashmode_id": "1700",
+      "hashmode_name": "SHA2-512",
+      "speed": 1989700000.0
+    },
+    "Hash-Mode 22000": {
+      "hashmode_id": "22000",
+      "hashmode_name": "WPA-PBKDF2-PMKID+EAPOL",
+      "speed": 688100.0
+    },
+    "Hash-Mode 1000": {
+      "hashmode_id": "1000",
+      "hashmode_name": "NTLM",
+      "speed": 69995300000.0
+    },
+    "Hash-Mode 3000": {
+      "hashmode_id": "3000",
+      "hashmode_name": "LM",
+      "speed": 41483700000.0
+    },
+    "Hash-Mode 5500": {
+      "hashmode_id": "5500",
+      "hashmode_name": "NetNTLMv1 / NetNTLMv1+ESS",
+      "speed": 42792600000.0
+    },
+    "Hash-Mode 5600": {
+      "hashmode_id": "5600",
+      "hashmode_name": "NetNTLMv2",
+      "speed": 3073100000.0
+    },
+    "Hash-Mode 1500": {
+      "hashmode_id": "1500",
+      "hashmode_name": "descrypt, DES (Unix",
+      "speed": 1697800000.0
+    },
+    "Hash-Mode 500": {
+      "hashmode_id": "500",
+      "hashmode_name": "md5crypt, MD5 (Unix",
+      "speed": 16579200.0
+    },
+    "Hash-Mode 3200": {
+      "hashmode_id": "3200",
+      "hashmode_name": "bcrypt $2*$, Blowfish (Unix",
+      "speed": 62357.0
+    },
+    "Hash-Mode 1800": {
+      "hashmode_id": "1800",
+      "hashmode_name": "sha512crypt $6$, SHA512 (Unix",
+      "speed": 278800.0
+    },
+    "Hash-Mode 7500": {
+      "hashmode_id": "7500",
+      "hashmode_name": "Kerberos 5, etype 23, AS-REQ Pre-Auth",
+      "speed": 984300000.0
+    },
+    "Hash-Mode 13100": {
+      "hashmode_id": "13100",
+      "hashmode_name": "Kerberos 5, etype 23, TGS-REP",
+      "speed": 979500000.0
+    },
+    "Hash-Mode 15300": {
+      "hashmode_id": "15300",
+      "hashmode_name": "DPAPI masterkey file v1 (context 1 and 2",
+      "speed": 122500.0
+    },
+    "Hash-Mode 15900": {
+      "hashmode_id": "15900",
+      "hashmode_name": "DPAPI masterkey file v2 (context 1 and 2",
+      "speed": 69202.0
+    },
+    "Hash-Mode 7100": {
+      "hashmode_id": "7100",
+      "hashmode_name": "macOS v10.8+ (PBKDF2-SHA512",
+      "speed": 835400.0
+    },
+    "Hash-Mode 11600": {
+      "hashmode_id": "11600",
+      "hashmode_name": "7-Zip",
+      "speed": 622000.0
+    },
+    "Hash-Mode 12500": {
+      "hashmode_id": "12500",
+      "hashmode_name": "RAR3-hp",
+      "speed": 87130.0
+    },
+    "Hash-Mode 13000": {
+      "hashmode_id": "13000",
+      "hashmode_name": "RAR5",
+      "speed": 75047.0
+    },
+    "Hash-Mode 6211": {
+      "hashmode_id": "6211",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit (legacy",
+      "speed": 488800.0
+    },
+    "Hash-Mode 13400": {
+      "hashmode_id": "13400",
+      "hashmode_name": "KeePass 1 (AES/Twofish",
+      "speed": 82214.0
+    },
+    "Hash-Mode 6800": {
+      "hashmode_id": "6800",
+      "hashmode_name": "LastPass + LastPass sniffed",
+      "speed": 4336300.0
+    },
+    "Hash-Mode 11300": {
+      "hashmode_id": "11300",
+      "hashmode_name": "Bitcoin/Litecoin wallet.dat",
+      "speed": 8512.0
+    }
+  },
   "H100PCIE": {
     "Hash-Mode 0": {
       "hashmode_id": "0",
@@ -22102,6 +22229,133 @@
       "hashmode_id": "99999",
       "hashmode_name": "Plaintext",
       "speed": 119900000000.0
+    }
+  },
+  "A800-80G-PCIE": {
+    "Hash-Mode 0": {
+      "hashmode_id": "0",
+      "hashmode_name": "MD5",
+      "speed": 68136700000.0
+    },
+    "Hash-Mode 100": {
+      "hashmode_id": "100",
+      "hashmode_name": "SHA1",
+      "speed": 22072300000.0
+    },
+    "Hash-Mode 1400": {
+      "hashmode_id": "1400",
+      "hashmode_name": "SHA2-256",
+      "speed": 9542200000.0
+    },
+    "Hash-Mode 1700": {
+      "hashmode_id": "1700",
+      "hashmode_name": "SHA2-512",
+      "speed": 3211000000.0
+    },
+    "Hash-Mode 22000": {
+      "hashmode_id": "22000",
+      "hashmode_name": "WPA-PBKDF2-PMKID+EAPOL",
+      "speed": 1125200.0
+    },
+    "Hash-Mode 1000": {
+      "hashmode_id": "1000",
+      "hashmode_name": "NTLM",
+      "speed": 115900000000.0
+    },
+    "Hash-Mode 3000": {
+      "hashmode_id": "3000",
+      "hashmode_name": "LM",
+      "speed": 66037399999.99999
+    },
+    "Hash-Mode 5500": {
+      "hashmode_id": "5500",
+      "hashmode_name": "NetNTLMv1 / NetNTLMv1+ESS",
+      "speed": 69998200000.0
+    },
+    "Hash-Mode 5600": {
+      "hashmode_id": "5600",
+      "hashmode_name": "NetNTLMv2",
+      "speed": 5077800000.0
+    },
+    "Hash-Mode 1500": {
+      "hashmode_id": "1500",
+      "hashmode_name": "descrypt, DES (Unix",
+      "speed": 2680200000.0
+    },
+    "Hash-Mode 500": {
+      "hashmode_id": "500",
+      "hashmode_name": "md5crypt, MD5 (Unix",
+      "speed": 29514700.0
+    },
+    "Hash-Mode 3200": {
+      "hashmode_id": "3200",
+      "hashmode_name": "bcrypt $2*$, Blowfish (Unix",
+      "speed": 137900.0
+    },
+    "Hash-Mode 1800": {
+      "hashmode_id": "1800",
+      "hashmode_name": "sha512crypt $6$, SHA512 (Unix",
+      "speed": 526900.0
+    },
+    "Hash-Mode 7500": {
+      "hashmode_id": "7500",
+      "hashmode_name": "Kerberos 5, etype 23, AS-REQ Pre-Auth",
+      "speed": 2153900000.0
+    },
+    "Hash-Mode 13100": {
+      "hashmode_id": "13100",
+      "hashmode_name": "Kerberos 5, etype 23, TGS-REP",
+      "speed": 1975700000.0
+    },
+    "Hash-Mode 15300": {
+      "hashmode_id": "15300",
+      "hashmode_name": "DPAPI masterkey file v1 (context 1 and 2",
+      "speed": 191600.0
+    },
+    "Hash-Mode 15900": {
+      "hashmode_id": "15900",
+      "hashmode_name": "DPAPI masterkey file v2 (context 1 and 2",
+      "speed": 108500.0
+    },
+    "Hash-Mode 7100": {
+      "hashmode_id": "7100",
+      "hashmode_name": "macOS v10.8+ (PBKDF2-SHA512",
+      "speed": 1359700.0
+    },
+    "Hash-Mode 11600": {
+      "hashmode_id": "11600",
+      "hashmode_name": "7-Zip",
+      "speed": 1223600.0
+    },
+    "Hash-Mode 12500": {
+      "hashmode_id": "12500",
+      "hashmode_name": "RAR3-hp",
+      "speed": 163000.0
+    },
+    "Hash-Mode 13000": {
+      "hashmode_id": "13000",
+      "hashmode_name": "RAR5",
+      "speed": 120500.0
+    },
+    "Hash-Mode 6211": {
+      "hashmode_id": "6211",
+      "hashmode_name": "TrueCrypt RIPEMD160 + XTS 512 bit (legacy",
+      "speed": 822500.0
+    },
+    "Hash-Mode 13400": {
+      "hashmode_id": "13400",
+      "hashmode_name": "KeePass 1 (AES/Twofish",
+      "speed": 140100.0
+    },
+    "Hash-Mode 6800": {
+      "hashmode_id": "6800",
+      "hashmode_name": "LastPass + LastPass sniffed",
+      "speed": 7640200.0
+    },
+    "Hash-Mode 11300": {
+      "hashmode_id": "11300",
+      "hashmode_name": "Bitcoin/Litecoin wallet.dat",
+      "speed": 14619.0
     }
   },
   "RTX4060": {
