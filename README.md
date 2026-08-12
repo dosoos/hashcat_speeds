@@ -26,7 +26,7 @@ This page supports filtering and sorting by various Hash-Modes, making it easy t
 4. Click **Submit**. The output is validated in a [Cloudflare Worker](worker/),
    the GPU model is auto-detected, and the result is committed to `benchmarks/`
    as `<Model>_<timestamp>.txt` (e.g.
-   `NVIDIA_GeForce_RTX_4090_2026-08-12T14:30:45.123.txt`). The GitHub Action
+   `NVIDIA_GeForce_RTX_4090_2026-08-12T14-30-45.123.txt`). The GitHub Action
    then automatically regenerates `pages/datas.json` and the charts.
 
 The submit button only appears once the page has been configured with a worker

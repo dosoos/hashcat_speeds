@@ -38,7 +38,8 @@ That's the whole request — no GPU model field. The worker extracts the model
 from the first real device line in the output (e.g. `* Device #1: NVIDIA GeForce
 RTX 4090, 20155/24563 MB, 128MCU`) and names the file
 `benchmarks/<Model>_<UTC-timestamp>.txt`, e.g.
-`benchmarks/NVIDIA_GeForce_RTX_4090_2026-08-12T14:30:45.123.txt`.
+`benchmarks/NVIDIA_GeForce_RTX_4090_2026-08-12T14-30-45.123.txt`
+(colons are replaced with hyphens so filenames are valid on Windows).
 
 Responses:
 

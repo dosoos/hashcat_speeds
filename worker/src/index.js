@@ -103,11 +103,12 @@ function extractDeviceName(content) {
 }
 
 /**
- * Timestamp like 2026-08-12T14:30:45.123 — the date/time portion of an ISO 8601
- * UTC string (trailing Z stripped).
+ * Timestamp like 2026-08-12T14-30-45.123 — the date/time portion of an ISO 8601
+ * UTC string (trailing Z stripped), with colons replaced by hyphens so the
+ * result is a valid filename on Windows (where ':' is reserved).
  */
 function timestampForFilename(date) {
-  return date.toISOString().replace(/Z$/, ''); // 2026-08-12T14:30:45.123
+  return date.toISOString().replace(/Z$/, '').replace(/:/g, '-'); // 2026-08-12T14-30-45.123
 }
 
 async function verifyTurnstile(token, remoteip, env) {
