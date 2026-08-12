@@ -1,4 +1,4 @@
-name = "hashcat-benchmark-submit"
+name = "hashcat-speeds"
 main = "src/index.js"
 compatibility_date = "2025-08-01"
 
@@ -11,8 +11,8 @@ GITHUB_BRANCH = "main"
 # ALLOWED_ORIGIN = "https://dosoos.github.io"
 ALLOWED_ORIGIN = "*"
 
-# Secrets are NOT committed here. Set them with:
-#   wrangler secret put GITHUB_TOKEN
-#   wrangler secret put TURNSTILE_SECRET   # optional
+# Secrets are NOT committed here. Both are REQUIRED — set them with:
+#   wrangler secret put GITHUB_TOKEN       # fine-grained PAT, Contents read/write
+#   wrangler secret put TURNSTILE_SECRET   # Cloudflare Turnstile secret key
 #
 # For local development, copy .dev.vars.example to .dev.vars and fill in values.

@@ -4,24 +4,35 @@
  * Contents API. A push to main then triggers the existing GitHub Action that
  * regenerates pages/datas.json and the chart images.
  *
+ * The request body only needs { content } — the GPU model is extracted from the
+ * benchmark output itself and the file is auto-named:
+ *   benchmarks/<Model>_YYYY-MM-DDTHH-MM-SS.sssZ.txt
+ *
  * Required secrets (set with `wrangler secret put`):
- *   GITHUB_TOKEN    – fine-grained PAT with Contents read/write on the repo
- * Optional vars / secrets:
- *   GITHUB_OWNER    – repo owner (default: dosoos)
- *   GITHUB_REPO     – repo name  (default: hashcat_speeds)
- *   GITHUB_BRANCH   – branch     (default: main)
- *   TURNSTILE_SECRET – if set, submissions must include a valid turnstileToken
- *   ALLOWED_ORIGIN  – CORS origin (default: *, set to your pages origin)
+ *   GITHUB_TOKEN      – fine-grained PAT with Contents read/write on the repo
+ *   TURNSTILE_SECRET  – Cloudflare Turnstile secret key (mandatory)
+ * Optional vars:
+ *   GITHUB_OWNER   (default: dosoos)
+ *   GITHUB_REPO    (default: hashcat_speeds)
+ *   GITHUB_BRANCH  (default: main)
+ *   ALLOWED_ORIGIN (CORS origin; default: *)
  */
 
-const DEVICE_NAME_RE = /^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$/;
 const MAX_CONTENT_BYTES = 512 * 1024; // 512 KiB
 const MIN_HASH_MODES = 3;
 const MIN_SPEED_LINES = 3;
+const TURNSTILE_VERIFY_URL =
+  'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 
 const HASHMODE_RE_1 = /Hashmode:\s*(\d+)\s*-\s*(.+)/;
 const HASHMODE_RE_2 = /\* Hash-Mode\s*(\d+)\s*\((.+?)\)/;
 const SPEED_RE = /Speed\.(?:Dev\.#\d+|#\d+|#\*)\.*:\s*([0-9\.,]+)\s*([kMGT]?H\/s)/;
+
+// Matches the first real (non-skipped, non-warning) compute device, e.g.
+//   * Device #1: NVIDIA GeForce RTX 4090, 20155/24563 MB, 128MCU
+//   * Device #01: NVIDIA P102-100, 10015/10144 MB, 25MCU
+//   * Device #1: Tesla V100-SXM2-16GB, 15834/16144 MB, 80MCU
+const DEVICE_RE = /^\*\s*Device\s*#\d+:\s*(.+?),\s*\d+\s*\/\s*\d+\s*MB/m;
 
 function jsonResponse(data, status = 200, origin = '*') {
   return new Response(JSON.stringify(data), {
@@ -71,14 +82,35 @@ function validateBenchmark(content) {
   };
 }
 
-function sanitizeDeviceName(raw) {
-  if (typeof raw !== 'string') return null;
-  const name = raw.trim().replace(/\.txt$/i, '');
-  return DEVICE_NAME_RE.test(name) ? name : null;
+/**
+ * Pull the GPU model string out of the benchmark output and turn it into a
+ * filesystem-safe slug. Examples:
+ *   "NVIDIA GeForce RTX 4090" -> "NVIDIA_GeForce_RTX_4090"
+ *   "Tesla V100-SXM2-16GB"     -> "Tesla_V100-SXM2-16GB"
+ */
+function extractDeviceName(content) {
+  const m = content.match(DEVICE_RE);
+  if (!m) return null;
+  const raw = m[1].trim();
+  // Replace whitespace runs with underscore; drop anything that isn't a
+  // letter, number, dot, dash, or underscore; collapse repeated separators.
+  const slug = raw
+    .replace(/\s+/g, '_')
+    .replace(/[^A-Za-z0-9._-]/g, '')
+    .replace(/_+/g, '_')
+    .replace(/^[._-]+|[._-]+$/g, '');
+  return slug.length >= 2 && slug.length <= 80 ? slug : null;
+}
+
+/**
+ * Timestamp like 2026-08-12T14:30:45.123 — the date/time portion of an ISO 8601
+ * UTC string (trailing Z stripped).
+ */
+function timestampForFilename(date) {
+  return date.toISOString().replace(/Z$/, ''); // 2026-08-12T14:30:45.123
 }
 
 async function verifyTurnstile(token, remoteip, env) {
-  if (!env.TURNSTILE_SECRET) return true; // Turnstile not configured
   if (!token) return false;
 
   const form = new FormData();
@@ -86,13 +118,14 @@ async function verifyTurnstile(token, remoteip, env) {
   form.append('response', token);
   if (remoteip) form.append('remoteip', remoteip);
 
-  const resp = await fetch(
-    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
-    { method: 'POST', body: form }
-  );
+  const resp = await fetch(TURNSTILE_VERIFY_URL, { method: 'POST', body: form });
   if (!resp.ok) return false;
-  const data = await resp.json();
-  return data.success === true;
+  const data = await resp.json().catch(() => ({}));
+  if (data.success !== true) {
+    console.log('turnstile failure:', data['error-codes']);
+    return false;
+  }
+  return true;
 }
 
 function githubAuthHeaders(env) {
@@ -123,17 +156,14 @@ async function githubFileExists(env, path) {
 }
 
 async function githubCommitFile(env, path, contentBase64, message) {
-  const url = contentsUrl(env, path);
-  const body = JSON.stringify({
-    message,
-    content: contentBase64,
-    branch: env.GITHUB_BRANCH,
-  });
-
-  const resp = await fetch(url, {
+  const resp = await fetch(contentsUrl(env, path), {
     method: 'PUT',
     headers: { ...githubAuthHeaders(env), 'Content-Type': 'application/json' },
-    body,
+    body: JSON.stringify({
+      message,
+      content: contentBase64,
+      branch: env.GITHUB_BRANCH,
+    }),
   });
 
   const data = await resp.json().catch(() => ({}));
@@ -153,27 +183,40 @@ function base64Encode(str) {
   return btoa(binary);
 }
 
-async function handleSubmit(request, env) {
+async function handleSubmit(request, env, ctx) {
   const origin = request.headers.get('Origin') || env.ALLOWED_ORIGIN || '*';
   const clientIp = request.headers.get('CF-Connecting-IP') || undefined;
+
+  if (!env.TURNSTILE_SECRET) {
+    return jsonResponse(
+      { error: 'Server is not configured (TURNSTILE_SECRET missing).' },
+      500,
+      origin
+    );
+  }
+  if (!env.GITHUB_TOKEN) {
+    return jsonResponse(
+      { error: 'Server is not configured (GITHUB_TOKEN missing).' },
+      500,
+      origin
+    );
+  }
 
   let payload;
   try {
     payload = await request.json();
   } catch (_) {
-    return jsonResponse({ error: 'Invalid JSON body' }, 400, origin);
+    return jsonResponse({ error: 'Invalid JSON body.' }, 400, origin);
   }
 
-  const device = sanitizeDeviceName(payload.device);
-  if (!device) {
-    return jsonResponse(
-      {
-        error:
-          'Invalid device name. Use 1-64 chars: letters, numbers, dots, dashes, underscores.',
-      },
-      400,
-      origin
-    );
+  // Verify Turnstile first, before doing any real work.
+  const turnstileOk = await verifyTurnstile(
+    payload.turnstileToken,
+    clientIp,
+    env
+  );
+  if (!turnstileOk) {
+    return jsonResponse({ error: 'Captcha verification failed.' }, 403, origin);
   }
 
   const content = typeof payload.content === 'string' ? payload.content : '';
@@ -194,50 +237,43 @@ async function handleSubmit(request, env) {
     return jsonResponse(
       {
         error: `Content does not look like a hashcat benchmark (found ${check.modes} hash modes, ${check.speedLines} speed lines). Run "hashcat -b --benchmark-all" and paste the full output.`,
-        debug: check,
       },
       422,
       origin
     );
   }
 
-  if (env.TURNSTILE_SECRET) {
-    const ok = await verifyTurnstile(payload.turnstileToken, clientIp, env);
-    if (!ok) {
-      return jsonResponse({ error: 'Captcha verification failed.' }, 403, origin);
-    }
-  }
-
-  if (!env.GITHUB_TOKEN) {
+  const device = extractDeviceName(content);
+  if (!device) {
     return jsonResponse(
-      { error: 'Server is not configured (GITHUB_TOKEN missing).' },
-      500,
+      {
+        error:
+          'Could not detect a GPU device line in the output. Expected a line like "* Device #1: NVIDIA GeForce RTX 4090, 20155/24563 MB, 128MCU".',
+      },
+      422,
       origin
     );
   }
 
-  const filename = `${device}.txt`;
+  // Timestamp comes from the CF edge so it is consistent and not client-controlled.
+  // new Date() is available on Workers; the no-Date.now restriction only applies to
+  // workflow scripts.
+  const now = new Date(request.headers.get('CF-Date') || Date.now());
+  const filename = `${device}_${timestampForFilename(now)}.txt`;
   const path = `benchmarks/${filename}`;
 
   try {
     const exists = await githubFileExists(env, path);
     if (exists) {
+      // Extremely unlikely with millisecond timestamps; retry once with a suffix.
       return jsonResponse(
-        {
-          error: `${filename} already exists. Please choose a different device name or ask a maintainer to update it.`,
-        },
+        { error: `${filename} already exists; please retry.` },
         409,
         origin
       );
     }
 
-    const author =
-      typeof payload.author === 'string'
-        ? payload.author.trim().slice(0, 100)
-        : '';
-    const coAuthor = author ? `\n\nSubmitted by: ${author}` : '';
-    const message = `Add benchmark for ${device}${coAuthor}`;
-
+    const message = `Add benchmark for ${device}`;
     const result = await githubCommitFile(
       env,
       path,
@@ -251,11 +287,11 @@ async function handleSubmit(request, env) {
         device,
         filename,
         path,
+        submittedAt: now.toISOString(),
         commit: {
           sha: result.commit?.sha,
           url: result.commit?.html_url,
         },
-        content: result.content,
         note: 'Benchmark committed. The data regeneration workflow should start shortly.',
       },
       201,
@@ -263,11 +299,7 @@ async function handleSubmit(request, env) {
     );
   } catch (err) {
     console.error('submit error:', err);
-    return jsonResponse(
-      { error: err.message || 'Internal error' },
-      502,
-      origin
-    );
+    return jsonResponse({ error: err.message || 'Internal error' }, 502, origin);
   }
 }
 
@@ -276,7 +308,7 @@ function handleHealth() {
 }
 
 export default {
-  async fetch(request, env, _ctx) {
+  async fetch(request, env, ctx) {
     env.GITHUB_OWNER = env.GITHUB_OWNER || 'dosoos';
     env.GITHUB_REPO = env.GITHUB_REPO || 'hashcat_speeds';
     env.GITHUB_BRANCH = env.GITHUB_BRANCH || 'main';
@@ -295,7 +327,7 @@ export default {
     }
 
     if (request.method === 'POST' && url.pathname === '/submit') {
-      return handleSubmit(request, env);
+      return handleSubmit(request, env, ctx);
     }
 
     return jsonResponse({ error: 'Not found' }, 404, request.headers.get('Origin') || '*');

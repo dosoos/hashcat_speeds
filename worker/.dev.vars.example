@@ -5,6 +5,7 @@
 # Fine-grained PAT: select the repo, permission "Contents" = Read and write.
 GITHUB_TOKEN = "github_pat_xxxxxxxxxxxxxxxxxxxx"
 
-# Optional: Cloudflare Turnstile secret key. If set, the frontend must send a
-# valid turnstileToken. Get one at https://dash.cloudflare.com/?to=/:account/turnstile
+# Cloudflare Turnstile secret key. REQUIRED.
+# Create a widget at https://dash.cloudflare.com/?to=/:account/turnstile
+# Add your frontend origin (e.g. https://dosoos.github.io) to its allowed hostnames.
 TURNSTILE_SECRET = "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"

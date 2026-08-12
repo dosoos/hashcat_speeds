@@ -29,31 +29,42 @@ Cloudflare Worker  ── validates content ──►  GitHub Contents API
 
 ```json
 {
-  "device": "RTX4090",
   "content": "<full hashcat -b --benchmark-all output>",
-  "author": "optional credit / nickname",
-  "turnstileToken": "optional, required if TURNSTILE_SECRET is set"
+  "turnstileToken": "<Cloudflare Turnstile token>"
 }
 ```
 
+That's the whole request — no GPU model field. The worker extracts the model
+from the first real device line in the output (e.g. `* Device #1: NVIDIA GeForce
+RTX 4090, 20155/24563 MB, 128MCU`) and names the file
+`benchmarks/<Model>_<UTC-timestamp>.txt`, e.g.
+`benchmarks/NVIDIA_GeForce_RTX_4090_2026-08-12T14:30:45.123.txt`.
+
 Responses:
 
-- `201` — committed, returns `{ success, filename, commit: { sha, url } }`
-- `400` — invalid JSON or device name
-- `409` — `benchmarks/<device>.txt` already exists
+- `201` — committed, returns `{ success, device, filename, path, submittedAt, commit: { sha, url } }`
+- `400` — invalid JSON or empty content
+- `403` — Turnstile verification failed (or token missing)
+- `409` — generated filename already exists (retry)
 - `413` — content over 512 KiB
-- `422` — content does not parse as a hashcat benchmark
-- `403` — Turnstile verification failed
+- `422` — content does not parse as a hashcat benchmark, or no GPU device line found
+- `500` — worker not configured (`GITHUB_TOKEN` / `TURNSTILE_SECRET` missing)
 - `502` — GitHub API error
 
 `GET /` or `/health` returns `{ ok: true }`. CORS is enabled for all origins
 by default; set `ALLOWED_ORIGIN` to lock it down.
 
-## Validation
+## Validation & abuse protection
 
-The worker parses the pasted text with the same regexes as `gendata.py` and
-requires at least 3 hash modes and 3 `Speed.#...:` lines before it will commit.
-Device names must match `^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$`.
+- **Turnstile is mandatory.** `TURNSTILE_SECRET` must be set or the endpoint
+  returns 500; every submission is verified with Cloudflare before any work
+  happens. Add your Pages origin to the Turnstile widget's allowed hostnames.
+- The worker parses the pasted text with the same regexes as `gendata.py` and
+  requires at least 3 hash modes and 3 `Speed.#...:` lines.
+- The GPU model is extracted from the benchmark output itself and sanitized to
+  `[A-Za-z0-9._-]` (whitespace → `_`), so callers can't choose arbitrary paths.
+- Content is capped at 512 KiB; filenames are timestamped to millisecond
+  precision, so resubmissions never overwrite existing data.
 
 ## Deploy
 
@@ -82,7 +93,7 @@ Device names must match `^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$`.
    npm run deploy
    ```
    Wrangler prints the worker URL, e.g.
-   `https://hashcat-benchmark-submit.<your-subdomain>.workers.dev`.
+   `https://hashcat-speeds.<your-subdomain>.workers.dev`.
 6. Put that URL in `SUBMIT_CONFIG.workerUrl` in `pages/index.html` and commit.
 
 ### Local development

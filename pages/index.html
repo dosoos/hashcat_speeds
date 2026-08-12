@@ -11,8 +11,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!-- Chart.js datalabels plugin -->
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
-  <!-- Cloudflare Turnstile (only activates when turnstileSiteKey is set) -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <!-- Cloudflare Turnstile. Rendered explicitly when the submit modal opens. -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
 </head>
 <body class="bg-base-200 min-h-screen">
   <div class="container mx-auto p-4">
@@ -33,33 +33,24 @@
         <h3 class="font-bold text-xl mb-2">Submit a Hashcat Benchmark</h3>
         <p class="text-sm text-base-content/70 mb-4">
           Paste the full output of <code class="badge badge-ghost">hashcat -b --benchmark-all</code>.
-          It will be committed directly to <code class="badge badge-ghost">benchmarks/</code> and
-          the site data will be regenerated automatically.
+          The GPU model is detected automatically and the file is committed to
+          <code class="badge badge-ghost">benchmarks/</code> as
+          <code class="badge badge-ghost">&lt;Model&gt;_&lt;timestamp&gt;.txt</code>,
+          after which the site data is regenerated automatically.
         </p>
 
         <form id="submitForm" class="space-y-4">
           <div class="form-control w-full">
-            <label class="label"><span class="label-text">GPU model (filename, e.g. RTX4090)</span></label>
-            <input id="submitDevice" type="text" required maxlength="64"
-              pattern="[A-Za-z0-9][A-Za-z0-9._-]{0,63}"
-              placeholder="RTX4090" class="input input-bordered w-full" />
-            <label class="label"><span class="label-text-alt">Letters, numbers, dots, dashes, underscores. 1-64 chars.</span></label>
-          </div>
-
-          <div class="form-control w-full">
-            <label class="label"><span class="label-text">Your name / credit (optional)</span></label>
-            <input id="submitAuthor" type="text" maxlength="100"
-              placeholder="blazer" class="input input-bordered w-full" />
-          </div>
-
-          <div class="form-control w-full">
             <label class="label"><span class="label-text">Benchmark output</span></label>
-            <textarea id="submitContent" required rows="10"
+            <textarea id="submitContent" required rows="12"
               class="textarea textarea-bordered w-full font-mono text-xs"
-              placeholder="hashcat (v6.2.6) starting in benchmark mode..."></textarea>
+              placeholder="hashcat (v6.2.6) starting in benchmark mode...
+
+* Device #1: NVIDIA GeForce RTX 4090, 20155/24563 MB, 128MCU
+..."></textarea>
           </div>
 
-          <div id="turnstileWidget" class="cf-turnstile" data-sitekey="" style="display:none;"></div>
+          <div id="turnstileWidget"></div>
 
           <div id="submitStatus" role="alert" class="alert hidden"></div>
 
@@ -129,13 +120,13 @@
 
   <script>
     // ---------------------------------------------------------------------------
-    // Submission endpoint. After deploying worker/, paste its URL here.
-    // Leave workerUrl empty to hide the submit button.
-    // If you enabled Turnstile on the worker, set turnstileSiteKey too.
+    // Submission endpoint. Both values must be set or the submit button is hidden.
+    //   workerUrl        – Cloudflare Worker URL (no trailing slash)
+    //   turnstileSiteKey – Cloudflare Turnstile SITE key (public, starts with 0x)
     // ---------------------------------------------------------------------------
     const SUBMIT_CONFIG = {
-      workerUrl: '', // e.g. 'https://hashcat-benchmark-submit.<you>.workers.dev'
-      turnstileSiteKey: ''
+      workerUrl: 'https://hashcat-speeds.dosoos.workers.dev',
+      turnstileSiteKey: '0x4AAAAAAENwB3RC9AfYOAhr'
     };
 
     // Register Chart.js datalabels plugin
@@ -464,43 +455,81 @@
     const submitStatus = document.getElementById('submitStatus');
     const turnstileWidget = document.getElementById('turnstileWidget');
 
-    if (!SUBMIT_CONFIG.workerUrl) {
+    let turnstileWidgetId = null;
+
+    if (!SUBMIT_CONFIG.workerUrl || !SUBMIT_CONFIG.turnstileSiteKey) {
+      // Submission endpoint not fully configured — hide the feature.
       openSubmitBtn.remove();
     } else {
-      if (SUBMIT_CONFIG.turnstileSiteKey) {
-        turnstileWidget.dataset.sitekey = SUBMIT_CONFIG.turnstileSiteKey;
-        turnstileWidget.style.display = 'block';
+      // Wait for the Turnstile script (loaded async) to be ready.
+      function whenTurnstileReady(timeoutMs = 8000) {
+        return new Promise((resolve, reject) => {
+          const start = performance.now();
+          (function check() {
+            if (typeof window.turnstile !== 'undefined' && typeof window.turnstile.render === 'function') {
+              return resolve(window.turnstile);
+            }
+            if (performance.now() - start > timeoutMs) {
+              return reject(new Error('Turnstile failed to load.'));
+            }
+            setTimeout(check, 100);
+          })();
+        });
       }
 
-      openSubmitBtn.addEventListener('click', () => {
-        submitStatus.classList.add('hidden');
-        if (typeof turnstile !== 'undefined' && SUBMIT_CONFIG.turnstileSiteKey) {
-          turnstile.reset(turnstileWidget);
+      function resetTurnstile() {
+        if (turnstileWidgetId !== null && typeof window.turnstile !== 'undefined') {
+          window.turnstile.reset(turnstileWidgetId);
         }
+      }
+
+      openSubmitBtn.addEventListener('click', async () => {
+        submitStatus.classList.add('hidden');
         submitModal.showModal();
+
+        // Render (or re-render) the widget once the dialog is visible.
+        try {
+          const ts = await whenTurnstileReady();
+          if (turnstileWidgetId === null) {
+            turnstileWidget.innerHTML = '';
+            turnstileWidgetId = ts.render(turnstileWidget, {
+              sitekey: SUBMIT_CONFIG.turnstileSiteKey,
+              theme: document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light',
+              callback: () => { /* token obtained; submit happens on button click */ },
+              'error-callback': () => showStatus('error', 'Captcha error. Please refresh and try again.')
+            });
+          } else {
+            ts.reset(turnstileWidgetId);
+          }
+        } catch (err) {
+          showStatus('error', err.message || 'Captcha failed to load.');
+        }
       });
 
       cancelSubmitBtn.addEventListener('click', () => submitModal.close());
 
       submitForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const device = document.getElementById('submitDevice').value.trim();
-        const author = document.getElementById('submitAuthor').value.trim();
         const content = document.getElementById('submitContent').value;
+
+        if (turnstileWidgetId === null || typeof window.turnstile === 'undefined') {
+          showStatus('error', 'Captcha not ready yet, please wait a moment.');
+          return;
+        }
+        const turnstileToken = window.turnstile.getResponse(turnstileWidgetId);
+        if (!turnstileToken) {
+          showStatus('error', 'Please complete the captcha.');
+          return;
+        }
 
         setSubmitting(true);
         showStatus('info', 'Submitting to GitHub...');
-
-        let turnstileToken = null;
-        if (SUBMIT_CONFIG.turnstileSiteKey && typeof turnstile !== 'undefined') {
-          turnstileToken = turnstile.getResponse(turnstileWidget);
-        }
 
         try {
           const resp = await fetch(SUBMIT_CONFIG.workerUrl + '/submit', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ device, author, content, turnstileToken })
+            body: JSON.stringify({ content, turnstileToken })
           });
           const data = await resp.json().catch(() => ({}));
 
@@ -513,11 +542,10 @@
               '<div class="text-sm mt-1">The data regeneration workflow is starting; the chart will update shortly after the action completes.</div>'
             );
             submitForm.reset();
-            if (typeof turnstile !== 'undefined' && SUBMIT_CONFIG.turnstileSiteKey) {
-              turnstile.reset(turnstileWidget);
-            }
+            resetTurnstile();
           } else {
             showStatus('error', data.error || `Submission failed (HTTP ${resp.status}).`);
+            resetTurnstile();
           }
         } catch (err) {
           console.error(err);
