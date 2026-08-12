@@ -16,6 +16,25 @@ This page supports filtering and sorting by various Hash-Modes, making it easy t
 
 ## How to Add Your Benchmark Text
 
+### Option 1 — Submit on the website (recommended, no Git/PR needed)
+
+1. Run the benchmark:
+   ```
+   hashcat -b --benchmark-all > YourGPUModel.txt
+   ```
+2. Open the [online visualization page](https://dosoos.github.io/hashcat_speeds/pages/index.html)
+   and click **Submit Benchmark**.
+3. Enter your GPU model (e.g. `RTX4090`), optionally your name, and paste the
+   full contents of `YourGPUModel.txt`.
+4. Click **Submit**. The output is validated in a
+   [Cloudflare Worker](worker/), committed directly to `benchmarks/`, and the
+   GitHub Action automatically regenerates `pages/datas.json` and the charts.
+
+The submit button only appears once the page has been configured with a worker
+URL (see [worker/README.md](worker/README.md) for deployment).
+
+### Option 2 — Submit via Pull Request
+
 1. **Prepare Your Benchmark Results**  
    Run the Hashcat benchmark, for example:
    ```

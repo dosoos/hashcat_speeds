@@ -1,0 +1,18 @@
+name = "hashcat-benchmark-submit"
+main = "src/index.js"
+compatibility_date = "2025-08-01"
+
+# These are non-secret and are bundled at deploy time. Override per fork.
+[vars]
+GITHUB_OWNER = "dosoos"
+GITHUB_REPO = "hashcat_speeds"
+GITHUB_BRANCH = "main"
+# Restrict CORS to your GitHub Pages origin once live, e.g.
+# ALLOWED_ORIGIN = "https://dosoos.github.io"
+ALLOWED_ORIGIN = "*"
+
+# Secrets are NOT committed here. Set them with:
+#   wrangler secret put GITHUB_TOKEN
+#   wrangler secret put TURNSTILE_SECRET   # optional
+#
+# For local development, copy .dev.vars.example to .dev.vars and fill in values.

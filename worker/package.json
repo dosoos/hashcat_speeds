@@ -1,0 +1,16 @@
+{
+  "name": "hashcat-benchmark-submit-worker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker that accepts hashcat benchmark submissions and commits them to GitHub",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "secret:github": "wrangler secret put GITHUB_TOKEN",
+    "secret:turnstile": "wrangler secret put TURNSTILE_SECRET"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
