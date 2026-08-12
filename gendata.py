@@ -6,6 +6,22 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def short_device_label(name, max_len=20):
+    """Shorten a device/filename for chart axis labels.
+
+    1) drop trailing _<ISO timestamp> (e.g. _2026-08-12T08-39-58.435)
+    2) if still over max_len, drop vendor prefix (NVIDIA_GeForce_, TESLA_, ...)
+    3) fall back to truncation with ellipsis, then turn underscores into spaces.
+    """
+    label = re.sub(r'_\d{4}-\d{2}-\d{2}T[\d:.\-]+$', '', name)
+    if len(label) > max_len:
+        label = re.sub(
+            r'^(NVIDIA_GeForce_|NVIDIA_|AMD_Radeon_|AMD_|Intel_|TESLA_)', '', label)
+    if len(label) > max_len:
+        label = label[:max_len - 1] + '…'
+    return label.replace('_', ' ')
+
+
 def load_benchmarks(benchmarks_dir):
     devices = {}
     for filename in os.listdir(benchmarks_dir):
@@ -98,8 +114,9 @@ def draw_chart(hashmode, devices, showimage=False):
                 humanize.naturalsize(speed), 
                 ha='left', va='center', fontsize=9, fontweight='bold')
     
-    # add value
-    plt.yticks(y_pos, sorted_device_names)
+    # add value (shortened labels so long worker-submitted names stay readable)
+    short_labels = [short_device_label(name) for name in sorted_device_names]
+    plt.yticks(y_pos, short_labels)
     plt.xlabel(f'{hashmode} ({hashmode_data[hashmode]["hashmode_name"]}) Speed (H/s)')
     plt.title(f'Device for {hashmode} ({hashmode_data[hashmode]["hashmode_name"]}) Speed', fontsize=14, fontweight='bold')
     

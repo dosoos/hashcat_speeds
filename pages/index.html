@@ -136,6 +136,22 @@
     let selectedHashMode = '';
     let filteredHashModes = [];
     
+    // Shorten a device name (benchmark filename) for axis labels.
+    // 1) drop trailing _<ISO timestamp> (e.g. _2026-08-12T08-39-58.435)
+    // 2) if still over maxLen, drop vendor prefix (NVIDIA_GeForce_, TESLA_, ...)
+    // 3) fall back to truncation with ellipsis, then turn underscores into spaces.
+    function shortDeviceLabel(name, maxLen) {
+      maxLen = maxLen || 20;
+      var label = name.replace(/_\d{4}-\d{2}-\d{2}T[\d:.\-]+$/, '');
+      if (label.length > maxLen) {
+        label = label.replace(/^(NVIDIA_GeForce_|NVIDIA_|AMD_Radeon_|AMD_|Intel_|TESLA_)/, '');
+      }
+      if (label.length > maxLen) {
+        label = label.slice(0, maxLen - 1) + '…';
+      }
+      return label.replace(/_/g, ' ');
+    }
+
     // Function to format speed values
     function formatSpeed(speed) {
       if (speed >= 1e12) {
@@ -247,6 +263,7 @@
       
       const sortedDevices = sortedData.map(item => item.device);
       const sortedSpeeds = sortedData.map(item => item.speed);
+      const sortedLabels = sortedDevices.map(d => shortDeviceLabel(d));
       
       // Calculate dynamic height based on number of devices
       const minHeight = 200; // Minimum height
@@ -266,7 +283,7 @@
       chart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: sortedDevices,
+          labels: sortedLabels,
           datasets: [{
             label: 'Speed (H/s)',
             data: sortedSpeeds,
@@ -300,6 +317,9 @@
           plugins: {
             tooltip: {
               callbacks: {
+                title: function(context) {
+                  return sortedDevices[context[0].dataIndex];
+                },
                 label: function(context) {
                   return `${context.dataset.label}: ${formatSpeed(context.parsed.x)}`;
                 }
