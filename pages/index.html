@@ -535,11 +535,16 @@
 
           if (resp.ok && data.success) {
             const commitUrl = data.commit?.url;
+            const commitLink = commitUrl
+              ? `<a href="${commitUrl}" target="_blank" rel="noopener" class="link link-hover font-medium">View commit</a>`
+              : '';
             showStatus(
               'success',
-              `<div><strong>Committed!</strong> ${data.filename} was added to the repository.` +
-              (commitUrl ? ` <a href="${commitUrl}" target="_blank" class="link link-primary">View commit</a>.</div>` : '</div>') +
-              '<div class="text-sm mt-1">The data regeneration workflow is starting; the chart will update shortly after the action completes.</div>'
+              `<div class="flex flex-col gap-1 text-left w-full min-w-0">
+                <p class="font-semibold">Committed successfully</p>
+                <p class="text-sm opacity-80 break-all"><code class="text-xs">${data.filename}</code> added to the repository.${commitLink ? ' ' + commitLink : ''}</p>
+                <p class="text-xs opacity-70">Charts will refresh after the data regeneration workflow finishes.</p>
+              </div>`
             );
             submitForm.reset();
             resetTurnstile();
@@ -565,6 +570,7 @@
     function showStatus(kind, html) {
       submitStatus.classList.remove('hidden', 'alert-info', 'alert-success', 'alert-error');
       submitStatus.classList.add(
+        'items-start',
         kind === 'success' ? 'alert-success' :
         kind === 'error' ? 'alert-error' : 'alert-info'
       );
