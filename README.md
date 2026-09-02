@@ -18,7 +18,7 @@ This page supports filtering and sorting by various Hash-Modes, making it easy t
 
 1. Run the benchmark and copy the output:
    ```
-   hashcat -b --benchmark-all
+   hashcat -b
    ```
 2. Open the [online visualization page](https://dosoos.github.io/hashcat_speeds/pages/index.html)
    and click **Submit Benchmark**.
